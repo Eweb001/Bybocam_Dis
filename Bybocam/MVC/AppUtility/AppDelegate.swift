@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         BioMetricAuthenticator.shared.allowableReuseDuration = 60
          registerForRemoteNotification()
         
-        //Git update code
+        
         return true
     }
     func Autologin()
