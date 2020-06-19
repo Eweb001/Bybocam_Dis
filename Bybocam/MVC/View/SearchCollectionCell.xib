@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SearchCollectionCell" id="gTV-IL-0wX" customClass="SearchCollectionCell" customModule="Bybocam" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="321" height="295"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="321" height="295"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ka1-1f-2Hz">
+                        <rect key="frame" x="0.0" y="0.0" width="321" height="293"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loding" translatesAutoresizingMaskIntoConstraints="NO" id="TC7-Q2-a1t">
+                                <rect key="frame" x="3" y="3" width="315" height="287"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGZ-bJ-CTI">
+                                <rect key="frame" x="5" y="5" width="311" height="283"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="saS-m3-aH9">
+                                <rect key="frame" x="5" y="5" width="311" height="283"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="saS-m3-aH9" secondAttribute="trailing" constant="5" id="5fu-yk-9q6"/>
+                            <constraint firstItem="saS-m3-aH9" firstAttribute="top" secondItem="Ka1-1f-2Hz" secondAttribute="top" constant="5" id="7ux-Kg-9xb"/>
+                            <constraint firstItem="TC7-Q2-a1t" firstAttribute="leading" secondItem="Ka1-1f-2Hz" secondAttribute="leading" constant="3" id="FAk-rO-nMA"/>
+                            <constraint firstItem="TC7-Q2-a1t" firstAttribute="top" secondItem="Ka1-1f-2Hz" secondAttribute="top" constant="3" id="II2-nH-HqM"/>
+                            <constraint firstAttribute="bottom" secondItem="TC7-Q2-a1t" secondAttribute="bottom" constant="3" id="Nzb-rd-9rX"/>
+                            <constraint firstItem="jGZ-bJ-CTI" firstAttribute="leading" secondItem="Ka1-1f-2Hz" secondAttribute="leading" constant="5" id="WGc-BW-oeK"/>
+                            <constraint firstItem="jGZ-bJ-CTI" firstAttribute="top" secondItem="Ka1-1f-2Hz" secondAttribute="top" constant="5" id="eNn-RD-Df4"/>
+                            <constraint firstAttribute="bottom" secondItem="saS-m3-aH9" secondAttribute="bottom" constant="5" id="ij2-Ws-xbJ"/>
+                            <constraint firstAttribute="trailing" secondItem="TC7-Q2-a1t" secondAttribute="trailing" constant="3" id="kas-zv-hNG"/>
+                            <constraint firstAttribute="bottom" secondItem="jGZ-bJ-CTI" secondAttribute="bottom" constant="5" id="ldj-65-9cy"/>
+                            <constraint firstAttribute="trailing" secondItem="jGZ-bJ-CTI" secondAttribute="trailing" constant="5" id="mJW-tn-XGm"/>
+                            <constraint firstItem="saS-m3-aH9" firstAttribute="leading" secondItem="Ka1-1f-2Hz" secondAttribute="leading" constant="5" id="vZI-mh-mkh"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YellowPlay" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DHO-EI-WdN">
+                        <rect key="frame" x="135.5" y="122.5" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="Ig5-05-Qqi"/>
+                            <constraint firstAttribute="width" constant="50" id="yW5-vv-zsi"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Ka1-1f-2Hz" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="9fy-24-8fU"/>
+                <constraint firstAttribute="bottom" secondItem="Ka1-1f-2Hz" secondAttribute="bottom" constant="2" id="GjS-Ug-wAg"/>
+                <constraint firstItem="DHO-EI-WdN" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="NbU-8j-Bbb"/>
+                <constraint firstItem="Ka1-1f-2Hz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="TcX-Qm-8Lt"/>
+                <constraint firstAttribute="trailing" secondItem="Ka1-1f-2Hz" secondAttribute="trailing" id="v6S-n5-jAP"/>
+                <constraint firstItem="DHO-EI-WdN" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="vgm-SS-aSx"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="321" height="295"/>
+            <connections>
+                <outlet property="mainImg" destination="TC7-Q2-a1t" id="L1I-Du-SWM"/>
+                <outlet property="openImage" destination="jGZ-bJ-CTI" id="wWf-VM-Bdp"/>
+                <outlet property="playVideo" destination="saS-m3-aH9" id="E2n-e9-jea"/>
+                <outlet property="playiconImg" destination="DHO-EI-WdN" id="W3Y-pZ-ThW"/>
+                <outlet property="videoPlaySuperView" destination="Ka1-1f-2Hz" id="UH4-hk-kMm"/>
+            </connections>
+            <point key="canvasLocation" x="50.399999999999999" y="127.28635682158921"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="YellowPlay" width="50" height="50"/>
+        <image name="loding" width="540" height="390"/>
+    </resources>
+</document>

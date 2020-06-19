@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Calibri Light.ttf">
+            <string>Calibri-Light</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotificationTableCell" id="KGk-i7-Jjw" customClass="NotificationTableCell" customModule="Bybocam" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="366" height="183"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="366" height="182.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yNx-Yt-Nlt">
+                        <rect key="frame" x="10" y="10" width="346" height="162.5"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGx-vd-oPt">
+                                <rect key="frame" x="15" y="37" width="316" height="97.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="97.5" id="v44-2i-ucE"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit er elit lamet, consectetaur. </string>
+                                <fontDescription key="fontDescription" name="Calibri-Light" family="Calibri" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1h ago" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fp2-OH-ybY">
+                                <rect key="frame" x="211" y="15" width="120" height="12"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="12" id="55k-gC-NxH"/>
+                                    <constraint firstAttribute="width" constant="120" id="N6y-vn-ojF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Calibri-Light" family="Calibri" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 November, 2019" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQw-oU-82H">
+                                <rect key="frame" x="211" y="144.5" width="120" height="14"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="14" id="mZX-2w-AJs"/>
+                                    <constraint firstAttribute="width" constant="120" id="xXw-Jt-gth"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Calibri-Light" family="Calibri" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Fp2-OH-ybY" secondAttribute="trailing" constant="15" id="0zz-vF-Xhh"/>
+                            <constraint firstItem="Fp2-OH-ybY" firstAttribute="top" secondItem="yNx-Yt-Nlt" secondAttribute="top" constant="15" id="4P0-JU-Gig"/>
+                            <constraint firstItem="wGx-vd-oPt" firstAttribute="leading" secondItem="yNx-Yt-Nlt" secondAttribute="leading" constant="15" id="ImS-8u-ZOV"/>
+                            <constraint firstAttribute="trailing" secondItem="xQw-oU-82H" secondAttribute="trailing" constant="15" id="QQ2-KW-A4y"/>
+                            <constraint firstItem="wGx-vd-oPt" firstAttribute="top" secondItem="Fp2-OH-ybY" secondAttribute="bottom" constant="10" id="g6d-n3-I7z"/>
+                            <constraint firstAttribute="trailing" secondItem="wGx-vd-oPt" secondAttribute="trailing" constant="15" id="jER-Ke-Zky"/>
+                            <constraint firstItem="xQw-oU-82H" firstAttribute="top" secondItem="wGx-vd-oPt" secondAttribute="bottom" constant="10" id="o7u-sB-URD"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="yNx-Yt-Nlt" secondAttribute="trailing" constant="10" id="2Sd-ZC-zs2"/>
+                    <constraint firstAttribute="bottom" secondItem="yNx-Yt-Nlt" secondAttribute="bottom" constant="10" id="CQQ-Ck-W9c"/>
+                    <constraint firstItem="yNx-Yt-Nlt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="eDU-o5-ONc"/>
+                    <constraint firstItem="yNx-Yt-Nlt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="tk7-bn-S4C"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="borderView" destination="yNx-Yt-Nlt" id="p6C-1Z-ojB"/>
+                <outlet property="mainTextView" destination="wGx-vd-oPt" id="Fcy-WX-jyg"/>
+            </connections>
+            <point key="canvasLocation" x="302.39999999999998" y="86.806596701649184"/>
+        </tableViewCell>
+    </objects>
+</document>

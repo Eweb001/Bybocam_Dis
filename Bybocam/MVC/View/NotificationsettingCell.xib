@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Calibri Bold.TTF">
+            <string>Calibri-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotificationsettingCell" rowHeight="52" id="aAZ-P1-8n7" customClass="NotificationsettingCell" customModule="Bybocam" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="397" height="53"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aAZ-P1-8n7" id="dFh-90-Wps">
+                <rect key="frame" x="0.0" y="0.0" width="397" height="52.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xsJ-iB-2i8">
+                        <rect key="frame" x="340" y="11" width="51" height="31"/>
+                    </switch>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Introduction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4I1-KP-SEy">
+                        <rect key="frame" x="15" y="17.5" width="93.5" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="KQN-lT-bpS"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G4E-PH-Tqj">
+                        <rect key="frame" x="8" y="51.5" width="381" height="1"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="pcw-3k-E2T"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="xsJ-iB-2i8" firstAttribute="centerY" secondItem="dFh-90-Wps" secondAttribute="centerY" id="B5s-gs-dya"/>
+                    <constraint firstAttribute="bottom" secondItem="G4E-PH-Tqj" secondAttribute="bottom" id="F9Y-gp-DkV"/>
+                    <constraint firstItem="G4E-PH-Tqj" firstAttribute="leading" secondItem="dFh-90-Wps" secondAttribute="leading" constant="8" id="GRv-t7-1sF"/>
+                    <constraint firstAttribute="trailing" secondItem="xsJ-iB-2i8" secondAttribute="trailing" constant="8" id="Htd-Hj-mYi"/>
+                    <constraint firstItem="4I1-KP-SEy" firstAttribute="leading" secondItem="dFh-90-Wps" secondAttribute="leading" constant="15" id="XwO-Rn-DiS"/>
+                    <constraint firstAttribute="trailing" secondItem="G4E-PH-Tqj" secondAttribute="trailing" constant="8" id="e0k-h9-Jc9"/>
+                    <constraint firstItem="4I1-KP-SEy" firstAttribute="centerY" secondItem="dFh-90-Wps" secondAttribute="centerY" id="nZp-QM-qWo"/>
+                    <constraint firstAttribute="bottom" secondItem="G4E-PH-Tqj" secondAttribute="bottom" id="weE-bb-qdK"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="yIQ-Jl-6jE"/>
+            <connections>
+                <outlet property="nameLbl" destination="4I1-KP-SEy" id="1dM-Mm-6EI"/>
+                <outlet property="switchBtn" destination="xsJ-iB-2i8" id="UKw-vH-2qw"/>
+            </connections>
+            <point key="canvasLocation" x="388" y="24"/>
+        </tableViewCell>
+    </objects>
+</document>

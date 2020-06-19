@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Profile2ndTableViewCell" rowHeight="32" id="KGk-i7-Jjw" customClass="Profile2ndTableViewCell" customModule="Bybocam" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="367" height="49"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="367" height="48.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="URf-Rk-0Dv">
+                        <rect key="frame" x="1" y="0.0" width="365" height="40.5"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="oLU-90-9gu">
+                                <rect key="frame" x="117.5" y="2" width="130" height="36.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjQ-t7-gKi">
+                                        <rect key="frame" x="0.0" y="0.0" width="45" height="36.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="GRID">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Klq-Tb-f35">
+                                        <rect key="frame" x="85" y="0.0" width="45" height="36.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="LIST"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="a1C-Bv-etT"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oLU-90-9gu" firstAttribute="centerX" secondItem="URf-Rk-0Dv" secondAttribute="centerX" id="ARZ-zF-7UL"/>
+                            <constraint firstAttribute="bottom" secondItem="oLU-90-9gu" secondAttribute="bottom" constant="2" id="fld-Ys-Rc4"/>
+                            <constraint firstItem="oLU-90-9gu" firstAttribute="top" secondItem="URf-Rk-0Dv" secondAttribute="top" constant="2" id="vcV-Ed-3j9"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="URf-Rk-0Dv" secondAttribute="trailing" constant="1" id="9Dv-2A-qls"/>
+                    <constraint firstAttribute="bottom" secondItem="URf-Rk-0Dv" secondAttribute="bottom" constant="8" id="Dd1-DH-xRe"/>
+                    <constraint firstItem="URf-Rk-0Dv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="1" id="TD8-iX-p2D"/>
+                    <constraint firstItem="URf-Rk-0Dv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="UfZ-6J-9aB"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="gridBtn" destination="Klq-Tb-f35" id="lYG-gt-MH2"/>
+                <outlet property="listBtn" destination="cjQ-t7-gKi" id="k3m-ke-awH"/>
+            </connections>
+            <point key="canvasLocation" x="191.19999999999999" y="62.518740629685162"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="GRID" width="50" height="42"/>
+        <image name="LIST" width="50" height="42"/>
+    </resources>
+</document>
