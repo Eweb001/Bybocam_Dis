@@ -72,20 +72,34 @@ extension  ProfileGridTableViewCell : UICollectionViewDelegate,UICollectionViewD
            
              if vcName == "ViewUserProfileVC"
             {
+                cell.deleteBtn.isHidden=true
              cell.buutomView.isHidden = true
                 cell.buttomConst.constant = 0
             }
-             else{
+             else if vcName == "NewProfileViewController"
+             {
+                cell.deleteBtn.isHidden=false
+                cell.buutomView.isHidden = false
+                cell.buttomConst.constant = 50
+            }
+             else
+             {
+                cell.deleteBtn.isHidden=true
                 cell.buutomView.isHidden = false
                  cell.buttomConst.constant = 50
             }
         }
         else{
+            cell.deleteBtn.isHidden=true
             cell.buutomView.isHidden = false
              cell.buttomConst.constant = 50
         }
         cell.likBtn.tag = indexPath.row
         cell.likBtn.addTarget(self, action: #selector(LikeBtnAction), for: .touchUpInside)
+        
+        
+        cell.deleteBtn.tag = indexPath.row
+        cell.deleteBtn.addTarget(self, action: #selector(DeleteBtnAction), for: .touchUpInside)
         
         let likeStatus = dict?.isliked
         
@@ -243,6 +257,37 @@ extension  ProfileGridTableViewCell : UICollectionViewDelegate,UICollectionViewD
             
         
         
+    }
+    
+    
+    @objc func DeleteBtnAction(_ sender:UIButton)
+    {
+        let dict =  self.ModelApiResponse?.postData?.reversed()[sender.tag]
+        print(sender.tag)
+        self.POSTID = dict?.postId ?? "0"
+        
+        let alert = UIAlertController(title: "Alert", message: "Are you sure you want to Delete this post?", preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (action: UIAlertAction!) in
+            
+            if !NetworkEngine.networkEngineObj.isInternetAvailable()
+            {
+                
+                //NetworkEngine.showInterNetAlert(vc: self)
+            }
+            else
+            {
+                self.deletePostApi()
+            }
+            
+            
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+            print("Handle Cancel Logic here")
+        }))
+      //  present(alert, animated: true, completion: nil)
+        UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
+
     }
     
     //MARK:- like btn click
@@ -403,5 +448,68 @@ extension  ProfileGridTableViewCell : UICollectionViewDelegate,UICollectionViewD
             
         }
         
+    }
+    
+    
+    //MARK:- Delete post Api here...
+    
+    func  deletePostApi()
+    {
+        SVProgressHUD.show()
+        
+        SVProgressHUD.setBorderColor(UIColor.white)
+        SVProgressHUD.setForegroundColor(UIColor.white)
+        SVProgressHUD.setBackgroundColor(UIColor.black)
+        
+        var USERID = "4"
+        if let NewUSERid = DEFAULT.value(forKey: "USER_ID") as? String
+        {
+            USERID = NewUSERid
+        }
+        let para = ["userId" : USERID,
+                    "postId" : self.POSTID ]   as! [String : String]
+        print(para)
+        
+        
+        ApiHandler.PostModelApiPostMethod(url: DELETE_VIDEO, parameters: para, Header: ["":""]) { (responsedata, error) in
+            
+            do
+            {
+                let decoder = JSONDecoder()
+                
+                if  responsedata != nil
+                    
+                {
+                    self.likeUnlikeApiRespose = try decoder.decode(AddSingleMsg.self, from: responsedata!)
+                    
+                    if self.likeUnlikeApiRespose?.status == "success"
+                    {
+                        
+                        NetworkEngine.networkEngineObj.showAlert(messageToShow: self.likeUnlikeApiRespose?.message ?? "", title: "Alert!")
+                        
+                        
+                    }
+                }
+                
+            }
+            catch let error
+            {
+                print(error)
+            }
+            
+        }
+        
+    }
+}
+extension UIView {
+    var parentViewController: UIViewController? {
+        var parentResponder: UIResponder? = self
+        while parentResponder != nil {
+            parentResponder = parentResponder!.next
+            if parentResponder is UIViewController {
+                return parentResponder as? UIViewController
+            }
+        }
+        return nil
     }
 }

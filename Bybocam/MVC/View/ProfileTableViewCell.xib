@@ -36,16 +36,36 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="As2-hu-T23">
                                         <rect key="frame" x="4" y="4" width="375" height="321.5"/>
                                     </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqe-H5-zyT">
+                                        <rect key="frame" x="335" y="8" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Gu7-3c-QRR"/>
+                                            <constraint firstAttribute="width" constant="40" id="XM1-jz-fGp"/>
+                                        </constraints>
+                                        <state key="normal" image="delete_48"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88x-pL-sPC">
+                                        <rect key="frame" x="335" y="281.5" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="OUH-J1-5IZ"/>
+                                            <constraint firstAttribute="width" constant="40" id="aiB-uh-L0A"/>
+                                        </constraints>
+                                        <state key="normal" image="YellowPlay"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="yQa-UN-DDl" firstAttribute="top" secondItem="gx0-5J-7jv" secondAttribute="top" id="3u9-Yp-QQ1"/>
                                     <constraint firstAttribute="trailing" secondItem="As2-hu-T23" secondAttribute="trailing" constant="4" id="Ggl-Bd-TRs"/>
                                     <constraint firstItem="yQa-UN-DDl" firstAttribute="leading" secondItem="gx0-5J-7jv" secondAttribute="leading" id="ILO-Ir-eqp"/>
+                                    <constraint firstAttribute="bottom" secondItem="88x-pL-sPC" secondAttribute="bottom" constant="8" id="K7b-Cc-j5Q"/>
+                                    <constraint firstItem="bqe-H5-zyT" firstAttribute="top" secondItem="gx0-5J-7jv" secondAttribute="top" constant="8" id="PU2-zg-ocw"/>
                                     <constraint firstAttribute="bottom" secondItem="As2-hu-T23" secondAttribute="bottom" constant="4" id="RZZ-Oe-9Md"/>
                                     <constraint firstItem="As2-hu-T23" firstAttribute="top" secondItem="gx0-5J-7jv" secondAttribute="top" constant="4" id="Utn-P0-13g"/>
+                                    <constraint firstAttribute="trailing" secondItem="88x-pL-sPC" secondAttribute="trailing" constant="8" id="c3c-hj-QmA"/>
                                     <constraint firstAttribute="bottom" secondItem="yQa-UN-DDl" secondAttribute="bottom" id="fet-FW-uPP"/>
                                     <constraint firstItem="As2-hu-T23" firstAttribute="leading" secondItem="gx0-5J-7jv" secondAttribute="leading" constant="4" id="hHt-vo-86q"/>
+                                    <constraint firstAttribute="trailing" secondItem="bqe-H5-zyT" secondAttribute="trailing" constant="8" id="rfe-ZB-Xaj"/>
                                     <constraint firstAttribute="trailing" secondItem="yQa-UN-DDl" secondAttribute="trailing" id="tnr-wI-PMp"/>
                                 </constraints>
                             </view>
@@ -155,22 +175,12 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88x-pL-sPC">
-                        <rect key="frame" x="175.5" y="177" width="50" height="50"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="50" id="ipD-bl-RS0"/>
-                            <constraint firstAttribute="width" constant="50" id="ovg-uI-SBN"/>
-                        </constraints>
-                        <state key="normal" image="YellowPlay"/>
-                    </button>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="7SE-nE-a9a" secondAttribute="trailing" constant="5" id="1Oz-7T-VsB"/>
                     <constraint firstAttribute="bottom" secondItem="7SE-nE-a9a" secondAttribute="bottom" constant="5" id="54l-wy-9m2"/>
-                    <constraint firstItem="88x-pL-sPC" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Cwk-Px-D8C"/>
                     <constraint firstItem="7SE-nE-a9a" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="Frh-Ri-xeV"/>
-                    <constraint firstItem="88x-pL-sPC" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="aOe-TJ-eog"/>
                     <constraint firstItem="7SE-nE-a9a" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="ja9-39-jnt"/>
                 </constraints>
             </tableViewCellContentView>
@@ -182,6 +192,7 @@
                 <outlet property="commentBtn" destination="RH0-q3-7Cd" id="hgc-yc-N5t"/>
                 <outlet property="commentCountLbl" destination="SLR-NO-Ysb" id="0xc-Eq-fR3"/>
                 <outlet property="commentImg" destination="xtG-dT-flc" id="kEs-63-cup"/>
+                <outlet property="deleteBtn" destination="bqe-H5-zyT" id="Hyn-Zu-b5F"/>
                 <outlet property="likBtn" destination="ePO-bx-ZfS" id="bsd-Ir-8CZ"/>
                 <outlet property="likeCout" destination="HSL-fm-lLg" id="7i9-Gf-eNL"/>
                 <outlet property="likeImg" destination="EpH-Vb-2Nl" id="loZ-i5-8AG"/>
@@ -197,6 +208,7 @@
         <image name="ChattingIcon" width="35" height="35"/>
         <image name="YellowPlay" width="50" height="50"/>
         <image name="blackHaeart" width="35" height="35"/>
+        <image name="delete_48" width="48" height="48"/>
         <image name="img" width="250" height="300"/>
     </resources>
 </document>

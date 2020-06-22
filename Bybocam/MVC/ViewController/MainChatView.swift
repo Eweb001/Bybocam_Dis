@@ -525,7 +525,7 @@ class MainChatView:JSQMessagesViewController, UIPopoverControllerDelegate{
         var time2  = ""
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-       
+       /*
         if j == 0
         {
             if let snap1 = self.SingleChatMsgModelData?.data?[j]
@@ -618,6 +618,8 @@ class MainChatView:JSQMessagesViewController, UIPopoverControllerDelegate{
                 
             }
         }
+ */
+ return NSMutableAttributedString(string: "")
     }
     
     //===MARK:---- calculate difference

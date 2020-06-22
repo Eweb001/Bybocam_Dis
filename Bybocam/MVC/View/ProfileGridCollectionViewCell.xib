@@ -32,24 +32,34 @@
                                         <rect key="frame" x="4" y="4" width="267" height="161"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQF-LC-aeD">
-                                        <rect key="frame" x="112.5" y="59.5" width="50" height="50"/>
+                                        <rect key="frame" x="227" y="121" width="40" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="2Qe-e4-BGT"/>
-                                            <constraint firstAttribute="width" constant="50" id="gHo-Wz-ooc"/>
+                                            <constraint firstAttribute="width" constant="40" id="9X4-j5-XcJ"/>
+                                            <constraint firstAttribute="height" constant="40" id="9q5-My-NaG"/>
                                         </constraints>
                                         <state key="normal" image="YellowPlay"/>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raG-rH-Unx">
+                                        <rect key="frame" x="227" y="8" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="Ihe-Vw-zhs"/>
+                                            <constraint firstAttribute="height" constant="40" id="hya-qS-jZ3"/>
+                                        </constraints>
+                                        <state key="normal" image="delete_48"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="vQF-LC-aeD" firstAttribute="centerX" secondItem="k0h-PK-NKK" secondAttribute="centerX" id="2oG-F0-Szb"/>
+                                    <constraint firstAttribute="trailing" secondItem="vQF-LC-aeD" secondAttribute="trailing" constant="8" id="9Zo-7g-v0C"/>
+                                    <constraint firstItem="raG-rH-Unx" firstAttribute="top" secondItem="k0h-PK-NKK" secondAttribute="top" constant="8" id="Htx-0N-3M9"/>
                                     <constraint firstItem="Y2k-AD-I6Z" firstAttribute="top" secondItem="k0h-PK-NKK" secondAttribute="top" id="M1V-va-XsW"/>
                                     <constraint firstAttribute="trailing" secondItem="SRz-ii-KMx" secondAttribute="trailing" constant="4" id="RCb-aG-WpV"/>
+                                    <constraint firstAttribute="trailing" secondItem="raG-rH-Unx" secondAttribute="trailing" constant="8" id="UEO-RH-ghv"/>
                                     <constraint firstAttribute="bottom" secondItem="SRz-ii-KMx" secondAttribute="bottom" constant="4" id="ZKH-aY-5ch"/>
                                     <constraint firstItem="SRz-ii-KMx" firstAttribute="top" secondItem="k0h-PK-NKK" secondAttribute="top" constant="4" id="abW-8j-B2G"/>
                                     <constraint firstAttribute="trailing" secondItem="Y2k-AD-I6Z" secondAttribute="trailing" id="ejc-XB-CE2"/>
                                     <constraint firstAttribute="bottom" secondItem="Y2k-AD-I6Z" secondAttribute="bottom" id="euo-Is-Vjk"/>
-                                    <constraint firstItem="vQF-LC-aeD" firstAttribute="centerY" secondItem="k0h-PK-NKK" secondAttribute="centerY" id="gbA-SQ-ky8"/>
+                                    <constraint firstAttribute="bottom" secondItem="vQF-LC-aeD" secondAttribute="bottom" constant="8" id="ifh-Gv-nK1"/>
                                     <constraint firstItem="SRz-ii-KMx" firstAttribute="leading" secondItem="k0h-PK-NKK" secondAttribute="leading" constant="4" id="jej-SM-agW"/>
                                     <constraint firstItem="Y2k-AD-I6Z" firstAttribute="leading" secondItem="k0h-PK-NKK" secondAttribute="leading" id="uly-Sb-TQ0"/>
                                 </constraints>
@@ -173,6 +183,7 @@
                 <outlet property="commentBtn" destination="laB-OF-QuQ" id="Dw8-9n-0Oi"/>
                 <outlet property="commentCountLbl" destination="Juw-np-19S" id="xuo-AF-N6A"/>
                 <outlet property="commentImg" destination="c0G-Cc-f7b" id="WcV-on-ILI"/>
+                <outlet property="deleteBtn" destination="raG-rH-Unx" id="tmg-tC-5dR"/>
                 <outlet property="gridCollectImgg" destination="Y2k-AD-I6Z" id="W9v-SI-hdb"/>
                 <outlet property="likBtn" destination="sZR-SM-8af" id="4gL-BI-62V"/>
                 <outlet property="likeCout" destination="omE-J3-lHl" id="dHW-lg-Wa4"/>
@@ -187,6 +198,7 @@
         <image name="ChattingIcon" width="35" height="35"/>
         <image name="YellowPlay" width="50" height="50"/>
         <image name="blackHaeart" width="35" height="35"/>
+        <image name="delete_48" width="48" height="48"/>
         <image name="loding" width="540" height="390"/>
     </resources>
 </document>

@@ -880,6 +880,7 @@ extension  ViewUserProfileVC : UICollectionViewDelegate,UICollectionViewDataSour
     
     @objc func PlayVideo(_ sender:UIButton)
     {
+       // SVProgressHUD.show()
         let dict = self.ModelApiResponse?.userVideos?[sender.tag]
         
         if let  imageData = dict?.videoName
@@ -902,6 +903,8 @@ extension  ViewUserProfileVC : UICollectionViewDelegate,UICollectionViewDataSour
                     vc.player?.play()
                     
                 }
+              
+                
                 
             }
             
@@ -967,9 +970,28 @@ extension  ViewUserProfileVC : UICollectionViewDelegate,UICollectionViewDataSour
                     {
                         vc.player?.play()
                         
+                        
+//                        if (vc.player?.currentItem?.status == .readyToPlay)
+//                        {
+//                            SVProgressHUD.dismiss()
+//                            print("yes ready for play")
+//                        }
+//                        else
+//                        {
+//                            SVProgressHUD.show()
+//                              print("not ready for play")
+//                        }
+                        
                     }
                     print("to play url \(url)")
-                    
+//                    if "".isPlayerReady(player)
+//                    {
+//                        print("yes ready for play")
+//                    }
+//                    else
+//                    {
+//                        print("not ready for play")
+//                    }
                     
                     
                 }
@@ -1242,5 +1264,21 @@ extension  ViewUserProfileVC : UITableViewDataSource,UITableViewDelegate
     }
 }
 
+extension String
+{
+     func isPlayerReady(_ player:AVPlayer?) -> Bool {
+        
+        guard let player = player else { return false }
+        
+        let ready = player.status == .readyToPlay
+        
+        let timeRange = player.currentItem?.loadedTimeRanges.first as? CMTimeRange
+        guard let duration = timeRange?.duration else { return false } // Fail when loadedTimeRanges is empty
+        let timeLoaded = Int(duration.value) / Int(duration.timescale) // value/timescale = seconds
+        let loaded = timeLoaded > 0
+        
+        return ready && loaded
+    }
+}
 
 

@@ -11,6 +11,7 @@ import AVFoundation
 
 class ProfileGridCollectionViewCell: UICollectionViewCell,ASAutoPlayVideoLayerContainer
 {
+    @IBOutlet weak var deleteBtn: UIButton!
     @IBOutlet weak var plyBtn: UIButton!
     
     @IBOutlet weak var OpenImgBtn: UIButton!

@@ -20,9 +20,9 @@ class NewSettingViewController: UIViewController, UITableViewDataSource, UITable
     
     var LogoutApiResponse:SignUpModel?
     
-    var nameListArray = ["Notification","Privacy","Help","Report a Problem","Delete Account","Clear Search History","Clear Conversation","Clear Data","Term & Use","Share the App","Notification Setting","Liked Post","Blocked User","Log Out"]
+    var nameListArray = ["Notification","Privacy","Help","Report a Problem","Delete Account","Clear Search History","Clear Conversation","Clear Data","Term & Use","Share the App","Notification Setting"," Touch ID Authentication","Liked Post","Blocked User","Log Out"]
     
-    var ImageListArray = ["notification","privacy","help-icon","Report a problem","delete-user","delete_forever","delete_forever","Clear_data","term-& use","Share-the-app","notification","My-favourites","User_Name","log-out"]
+    var ImageListArray = ["notification","privacy","help-icon","Report a problem","delete-user","delete_forever","delete_forever","Clear_data","term-& use","Share-the-app","notification","privacy","My-favourites","User_Name","log-out"]
     
     
     // View Profile Array
@@ -209,11 +209,31 @@ class NewSettingViewController: UIViewController, UITableViewDataSource, UITable
             cell.nameLbl.text = nameListArray[indexPath.row]
             return cell
         }
+        if indexPath.row == 11
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationsettingCell") as! NotificationsettingCell
+            // cell.imgIcon.image = UIImage(named: ImageListArray[indexPath.row])
+           
+            if (DEFAULT.value(forKey: "TOUCHID") as? String) != nil
+            {
+                 cell.switchBtn.isOn = true
+            }
+            else
+            {
+               cell.switchBtn.isOn = false
+            }
+            
+            cell.switchBtn.addTarget(self, action: #selector(switchOnOff), for: UIControl.Event.valueChanged)
+            
+            cell.nameLbl.text = nameListArray[indexPath.row]
+            return cell
+        }
         else
         {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "SettingRowTableViewCell") as! SettingRowTableViewCell
             cell.imgIcon.image = UIImage(named: ImageListArray[indexPath.row])
+            
             cell.nameLbl.text = nameListArray[indexPath.row]
             return cell
         }
@@ -355,6 +375,21 @@ class NewSettingViewController: UIViewController, UITableViewDataSource, UITable
             }))
             present(alert, animated: true, completion: nil)
         }
+        
+    }
+    @objc func switchOnOff(_ sender:UISwitch)
+    {
+        print("sender = \(sender.isOn)")
+        if sender.isOn
+        {
+          DEFAULT.set("yes", forKey: "TOUCHID")
+        }
+        else
+        {
+             DEFAULT.removeObject(forKey: "TOUCHID")
+        }
+        DEFAULT.synchronize()
+        
         
     }
     // Logout Api here...

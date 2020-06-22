@@ -29,15 +29,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
          registerForRemoteNotification()
         
         
+        
         return true
     }
     func Autologin()
     {
        
-        if let val1 = DEFAULT.value(forKey: "USER_ID") as? String
+        if (DEFAULT.value(forKey: "USER_ID") as? String) != nil
         {
+            if (DEFAULT.value(forKey: "TOUCHID") as? String) != nil
+            {
             
-            self.AuthPage()
+            
+                self.AuthPage()
+            }
+            else
+            {
+               self.HomePage()
+            }
+            
+            
             
         }
         else

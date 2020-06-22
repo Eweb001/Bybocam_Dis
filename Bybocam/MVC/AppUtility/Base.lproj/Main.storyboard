@@ -2942,13 +2942,13 @@ If you have any questions about this Agreement, please contact us.
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3YC-dQ-ygQ">
-                                            <rect key="frame" x="18" y="15" width="183" height="29.5"/>
+                                            <rect key="frame" x="18" y="15" width="183" height="25"/>
                                             <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="25"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkH-4o-N8g">
-                                            <rect key="frame" x="18" y="50.5" width="183" height="22.5"/>
+                                            <rect key="frame" x="18" y="46" width="183" height="19"/>
                                             <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="19"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -2961,7 +2961,7 @@ If you have any questions about this Agreement, please contact us.
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z9S-NF-Dvc">
-                                            <rect key="frame" x="18" y="113" width="183" height="35"/>
+                                            <rect key="frame" x="18" y="105" width="183" height="35"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group-profile" translatesAutoresizingMaskIntoConstraints="NO" id="9mW-4a-hBY">
                                                     <rect key="frame" x="0.0" y="9.5" width="16" height="16"/>
@@ -2978,7 +2978,7 @@ If you have any questions about this Agreement, please contact us.
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LpP-gc-jtG">
-                                                    <rect key="frame" x="24" y="7.5" width="59" height="20"/>
+                                                    <rect key="frame" x="24" y="9" width="59" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="59" id="dVN-te-KLc"/>
                                                     </constraints>
@@ -2987,13 +2987,13 @@ If you have any questions about this Agreement, please contact us.
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followers: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbw-5H-IkE">
-                                                    <rect key="frame" x="93" y="1.5" width="82" height="32"/>
+                                                    <rect key="frame" x="93" y="3" width="82" height="29"/>
                                                     <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1IX-nx-9Ki">
-                                                    <rect key="frame" x="93" y="1.5" width="82" height="32"/>
+                                                    <rect key="frame" x="93" y="3" width="82" height="29"/>
                                                     <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="17"/>
                                                     <connections>
                                                         <action selector="goToFollower:" destination="oes-zR-QDv" eventType="touchUpInside" id="wHA-Cb-o7N"/>
@@ -3042,7 +3042,7 @@ If you have any questions about this Agreement, please contact us.
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Itm-4U-XGD">
-                                            <rect key="frame" x="18" y="88" width="183" height="22.5"/>
+                                            <rect key="frame" x="18" y="80" width="183" height="19"/>
                                             <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="19"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -3611,13 +3611,13 @@ If you have any questions about this Agreement, please contact us.
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bybocam" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6ab-m3-ygk">
-                                            <rect key="frame" x="18" y="8" width="196" height="25"/>
+                                            <rect key="frame" x="18" y="23" width="196" height="25"/>
                                             <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="25"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@bybocamUser" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sN8-PT-GsG">
-                                            <rect key="frame" x="18" y="41" width="196" height="18"/>
+                                            <rect key="frame" x="18" y="68" width="196" height="18"/>
                                             <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -3673,6 +3673,7 @@ If you have any questions about this Agreement, please contact us.
                                                 <constraint firstItem="ELy-Wn-0Ux" firstAttribute="leading" secondItem="7jA-hr-6Te" secondAttribute="trailing" constant="10" id="92c-Ku-won"/>
                                                 <constraint firstAttribute="bottom" secondItem="loc-En-C9H" secondAttribute="bottom" constant="-3" id="9Z9-Kf-BiC"/>
                                                 <constraint firstAttribute="trailing" secondItem="ELy-Wn-0Ux" secondAttribute="trailing" constant="8" id="FHW-cq-5tn"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="NhC-Rt-UsS"/>
                                                 <constraint firstItem="ELy-Wn-0Ux" firstAttribute="bottom" secondItem="Lj9-uO-I6i" secondAttribute="bottom" id="Rsk-Ik-KPn"/>
                                                 <constraint firstItem="7jA-hr-6Te" firstAttribute="centerY" secondItem="ESe-V5-gO2" secondAttribute="centerY" id="WIb-3z-GLi"/>
                                                 <constraint firstItem="7jA-hr-6Te" firstAttribute="leading" secondItem="ESe-V5-gO2" secondAttribute="trailing" constant="8" id="YNA-Rb-ti9"/>
@@ -3686,8 +3687,8 @@ If you have any questions about this Agreement, please contact us.
                                                 <constraint firstItem="loc-En-C9H" firstAttribute="leading" secondItem="gzj-6K-EtQ" secondAttribute="leading" constant="-16" id="ySJ-6v-Hjk"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🇮🇳 +91 8699047413" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZ1-pY-4q3">
-                                            <rect key="frame" x="18" y="74" width="196" height="18"/>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🇮🇳 +91 8699047413" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZ1-pY-4q3">
+                                            <rect key="frame" x="18" y="94" width="196" height="18"/>
                                             <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -3698,22 +3699,22 @@ If you have any questions about this Agreement, please contact us.
                                         <constraint firstItem="sN8-PT-GsG" firstAttribute="centerX" secondItem="6ab-m3-ygk" secondAttribute="centerX" id="00O-pc-Rec"/>
                                         <constraint firstItem="6ab-m3-ygk" firstAttribute="leading" secondItem="uWN-aW-KgK" secondAttribute="leading" constant="18" id="8YQ-mr-S7B"/>
                                         <constraint firstItem="4Qa-JT-kXQ" firstAttribute="top" secondItem="uWN-aW-KgK" secondAttribute="top" constant="8" id="CXu-6i-oMP"/>
-                                        <constraint firstItem="6ab-m3-ygk" firstAttribute="top" secondItem="4Qa-JT-kXQ" secondAttribute="top" id="JAU-Vz-TzX"/>
+                                        <constraint firstItem="6ab-m3-ygk" firstAttribute="top" secondItem="4Qa-JT-kXQ" secondAttribute="top" constant="15" id="JAU-Vz-TzX"/>
+                                        <constraint firstItem="0nk-K5-YE0" firstAttribute="top" secondItem="gzj-6K-EtQ" secondAttribute="bottom" constant="8" id="Jvg-lT-AoY"/>
                                         <constraint firstItem="gzj-6K-EtQ" firstAttribute="trailing" secondItem="6ab-m3-ygk" secondAttribute="trailing" id="Lsv-cv-m8b"/>
                                         <constraint firstItem="sN8-PT-GsG" firstAttribute="leading" secondItem="6ab-m3-ygk" secondAttribute="leading" id="PcB-We-fak"/>
                                         <constraint firstAttribute="trailing" secondItem="0nk-K5-YE0" secondAttribute="trailing" constant="-9" id="Urb-Az-AfV"/>
-                                        <constraint firstItem="sN8-PT-GsG" firstAttribute="top" secondItem="6ab-m3-ygk" secondAttribute="bottom" constant="8" id="VWM-4V-jzN"/>
-                                        <constraint firstItem="gzj-6K-EtQ" firstAttribute="top" secondItem="sN8-PT-GsG" secondAttribute="bottom" constant="48" id="Vbc-Dx-nYb"/>
+                                        <constraint firstItem="sN8-PT-GsG" firstAttribute="top" secondItem="6ab-m3-ygk" secondAttribute="bottom" constant="20" id="VWM-4V-jzN"/>
                                         <constraint firstItem="PZ1-pY-4q3" firstAttribute="leading" secondItem="sN8-PT-GsG" secondAttribute="leading" id="crG-vB-Cad"/>
                                         <constraint firstItem="sN8-PT-GsG" firstAttribute="trailing" secondItem="6ab-m3-ygk" secondAttribute="trailing" id="dD3-OG-Rb9"/>
                                         <constraint firstItem="0nk-K5-YE0" firstAttribute="leading" secondItem="uWN-aW-KgK" secondAttribute="leading" id="f4k-ZU-Uie"/>
                                         <constraint firstItem="gzj-6K-EtQ" firstAttribute="leading" secondItem="6ab-m3-ygk" secondAttribute="leading" id="f7A-sW-NCR"/>
                                         <constraint firstItem="gzj-6K-EtQ" firstAttribute="centerX" secondItem="6ab-m3-ygk" secondAttribute="centerX" id="hp5-5l-qQu"/>
+                                        <constraint firstItem="0nk-K5-YE0" firstAttribute="top" secondItem="PZ1-pY-4q3" secondAttribute="bottom" constant="38" id="iLH-9p-DDJ"/>
                                         <constraint firstAttribute="bottom" secondItem="0nk-K5-YE0" secondAttribute="bottom" id="kmo-kr-RHC"/>
                                         <constraint firstAttribute="trailing" secondItem="4Qa-JT-kXQ" secondAttribute="trailing" constant="8" id="nC4-XQ-qiD"/>
                                         <constraint firstItem="4Qa-JT-kXQ" firstAttribute="leading" secondItem="6ab-m3-ygk" secondAttribute="trailing" constant="8" id="owz-Xi-6wF"/>
                                         <constraint firstAttribute="height" constant="151" id="t3a-z9-tWE"/>
-                                        <constraint firstItem="PZ1-pY-4q3" firstAttribute="top" secondItem="sN8-PT-GsG" secondAttribute="bottom" constant="15" id="vOz-h6-eUT"/>
                                         <constraint firstItem="PZ1-pY-4q3" firstAttribute="trailing" secondItem="sN8-PT-GsG" secondAttribute="trailing" id="y14-cx-6vW"/>
                                         <constraint firstItem="ESe-V5-gO2" firstAttribute="leading" secondItem="6ab-m3-ygk" secondAttribute="leading" id="yno-uT-vop"/>
                                     </constraints>

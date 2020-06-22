@@ -543,7 +543,28 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
                             
                             self.dobTF.text = self.ModelApiResponse?.data?[0].dateOfBirth
                             
-                            self.countryCode.setTitle(self.ModelApiResponse?.data?[0].countryCode, for: .normal)
+                           
+                            if let code = self.ModelApiResponse?.data?[0].countryCode
+                            {
+                                
+                                if code == ""
+                                {
+                                    self.countryCode.setTitle("🇮🇳 +91", for: .normal)
+                                }
+                                else
+                                {
+                                    
+                              self.countryCode.setTitle(code, for: .normal)
+                                }
+                            }
+                            else
+                            {
+                               self.countryCode.setTitle("🇮🇳 +91", for: .normal)
+                            }
+                            
+                            
+                            
+                            
                             if let newImgg = self.ModelApiResponse?.data?[0].userImage
                             {
                                 let image_value = Image_Base_URL + newImgg

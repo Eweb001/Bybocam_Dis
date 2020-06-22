@@ -88,3 +88,5 @@ let BLOCK_USER_API = BASE_URL + "userBlock"
 let BLOCKED_USERLIST = BASE_URL + "getBlockedUsersByMe"
 
 let LIKED_VIDEO = BASE_URL + "getPostsLikedByMe"
+
+let DELETE_VIDEO = BASE_URL + "deletePost"

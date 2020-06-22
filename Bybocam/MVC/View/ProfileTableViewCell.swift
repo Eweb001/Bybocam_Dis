@@ -12,6 +12,7 @@ import AVFoundation
 
 class ProfileTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var deleteBtn: UIButton!
     @IBOutlet weak var mainProfileImg: UIImageView!
     @IBOutlet weak var openImgAct: UIButton!
     @IBOutlet weak var plyBtn: UIButton!
