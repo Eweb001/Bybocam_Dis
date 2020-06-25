@@ -256,15 +256,8 @@ class NewSettingViewController: UIViewController, UITableViewDataSource, UITable
         }
         else if (indexPath.row == 2)
         {
-            let alert = UIAlertController(title: "Alert", message: "No data avialable", preferredStyle: UIAlertController.Style.alert)
-            //            alert.addAction(UIAlertAction(title: "Logout", style: .destructive, handler: { (action: UIAlertAction!) in
-            //
-            //
-            //            }))
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
-                print("Handle Cancel Logic here")
-            }))
-            present(alert, animated: true, completion: nil)
+            let privacy = self.storyboard?.instantiateViewController(withIdentifier: "PrivacyViewController") as! PrivacyViewController
+            self.navigationController?.pushViewController(privacy, animated: true)
         }
         else if (indexPath.row == 3)
         {
@@ -342,19 +335,19 @@ class NewSettingViewController: UIViewController, UITableViewDataSource, UITable
             self.present(ActivityController, animated: true, completion: nil)
             
         }
-        else if (indexPath.row == 11)
+        else if (indexPath.row == 12)
         {
             let term = self.storyboard?.instantiateViewController(withIdentifier: "ViewLikeVideoVC") as! ViewLikeVideoVC
             self.navigationController?.pushViewController(term, animated: true)
             
         }
-        else if (indexPath.row == 12)
+        else if (indexPath.row == 13)
         {
             let term = self.storyboard?.instantiateViewController(withIdentifier: "BlokedViewController") as! BlokedViewController
             self.navigationController?.pushViewController(term, animated: true)
             
         }
-        else if (indexPath.row == 13)
+        else if (indexPath.row == 14)
         {
             let alert = UIAlertController(title: "Alert", message: "Are you sure you want to logout?", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Logout", style: .destructive, handler: { (action: UIAlertAction!) in

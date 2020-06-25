@@ -320,7 +320,7 @@ extension  ProfileGridTableViewCell : UICollectionViewDelegate,UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
-          return CGSize(width: (UIScreen.main.bounds.width/2)-5, height: 200 )
+          return CGSize(width: (UIScreen.main.bounds.width/2)-5, height: 240 )
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat
     {

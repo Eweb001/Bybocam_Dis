@@ -409,7 +409,7 @@ class MainChatView:JSQMessagesViewController, UIPopoverControllerDelegate{
     {
         
         let j = indexPath.item
-        
+        /*
         var time1  = ""
         var time2  = ""
         let dateFormatter = DateFormatter()
@@ -478,6 +478,8 @@ class MainChatView:JSQMessagesViewController, UIPopoverControllerDelegate{
             }
             
         }
+        */
+         return 0
     }
     
     
