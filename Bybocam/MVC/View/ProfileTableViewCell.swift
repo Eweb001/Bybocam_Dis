@@ -42,6 +42,7 @@ class ProfileTableViewCell: UITableViewCell {
         }
     }
     
+    @IBOutlet weak var likeListBtn: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

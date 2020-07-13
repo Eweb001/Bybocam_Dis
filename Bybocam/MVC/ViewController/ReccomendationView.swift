@@ -338,12 +338,12 @@ extension  ReccomendationView : UICollectionViewDelegate,UICollectionViewDataSou
         }
         else
         {
-            cell.noVideoFound.isHidden=false
+            cell.noVideoFound.isHidden=true
         }
         
         cell.userName.text = indexData?.userName
         
-        var img = indexData?.userImage
+        let img = indexData?.userImage
         if img != nil
         {
             let image_value = Image_Base_URL + img!
@@ -739,7 +739,7 @@ extension  ReccomendationView : UICollectionViewDelegate,UICollectionViewDataSou
             }
             else
             {
-                cell.noVideoFound.isHidden = false
+                cell.noVideoFound.isHidden = true
                 cell.stackView.isHidden = true
             }
         }

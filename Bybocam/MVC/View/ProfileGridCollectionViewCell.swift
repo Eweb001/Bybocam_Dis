@@ -18,6 +18,7 @@ class ProfileGridCollectionViewCell: UICollectionViewCell,ASAutoPlayVideoLayerCo
     
     @IBOutlet weak var gridCollectImgg: UIImageView!
     
+    @IBOutlet weak var likelistBtn: UIButton!
     @IBOutlet weak var videoPlayerSuperView: UIView!
     var avPlayer: AVPlayer?
     var avPlayerLayer: AVPlayerLayer?

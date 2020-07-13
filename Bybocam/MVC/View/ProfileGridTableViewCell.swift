@@ -73,8 +73,8 @@ extension  ProfileGridTableViewCell : UICollectionViewDelegate,UICollectionViewD
              if vcName == "ViewUserProfileVC"
             {
                 cell.deleteBtn.isHidden=true
-             cell.buutomView.isHidden = true
-                cell.buttomConst.constant = 0
+                cell.buutomView.isHidden = false
+                cell.buttomConst.constant = 50
             }
              else if vcName == "NewProfileViewController"
              {
@@ -125,8 +125,12 @@ extension  ProfileGridTableViewCell : UICollectionViewDelegate,UICollectionViewD
             cell.likeImg.image = #imageLiteral(resourceName: "like")
         }
         
+        cell.likelistBtn.tag = indexPath.row
+        cell.likelistBtn.addTarget(self, action: #selector(LikeBtnListAction), for: .touchUpInside)
+        
         cell.commentBtn.tag = indexPath.row
         cell.commentBtn.addTarget(self, action: #selector(CommentBtnAction), for: .touchUpInside)
+        
         
         
           let postType = dict?.postType //dict.value(forKey: "postType") as! String
@@ -224,6 +228,31 @@ extension  ProfileGridTableViewCell : UICollectionViewDelegate,UICollectionViewD
         }
     }
     
+    @objc func LikeBtnListAction(_ sender:UIButton)
+    {
+        let dict = self.ModelApiResponse?.postData?.reversed()[sender.tag]
+        let postId = dict?.postId
+        
+        
+        if let vcName = self.currentVC?.restorationIdentifier
+        {
+            if vcName == "FolloweViewController"
+            {
+                NotificationCenter.default.post(name: Notification.Name("LikeUserListFromFolloweViewController"), object: nil, userInfo: ["POSTID":postId])
+            }
+            else if vcName == "ViewUserProfileVC"
+            {
+                NotificationCenter.default.post(name: Notification.Name("LikeUserListViewUserProfileVCCommentUserProfile"), object: nil, userInfo: ["POSTID":postId])
+            }
+            else
+            {
+                NotificationCenter.default.post(name: Notification.Name("LikeUserListFromUsergProfileCommentUserProfile"), object: nil, userInfo: ["POSTID":postId])
+            }
+        }
+        
+        
+    }
+    
     //MARK:- Comment btn click
     
     
@@ -266,7 +295,7 @@ extension  ProfileGridTableViewCell : UICollectionViewDelegate,UICollectionViewD
         print(sender.tag)
         self.POSTID = dict?.postId ?? "0"
         
-        let alert = UIAlertController(title: "Alert", message: "Are you sure you want to Delete this post?", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Alert", message: "Are you sure you want to Delete this post?", preferredStyle: UIAlertController.Style.actionSheet)
         
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (action: UIAlertAction!) in
             

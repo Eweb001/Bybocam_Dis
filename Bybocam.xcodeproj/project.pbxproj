@@ -100,11 +100,13 @@
 		56800DEE23702C1D00248F68 /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56800DEC23702C1D00248F68 /* MessageTableViewCell.xib */; };
 		56800DF023702C3800248F68 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56800DEF23702C3800248F68 /* MessageViewController.swift */; };
 		56800DF223702DCF00248F68 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56800DF123702DCF00248F68 /* CardView.swift */; };
+		5699C32524BC78FB009B6815 /* shoutoutLoudVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5699C32424BC78FB009B6815 /* shoutoutLoudVC.swift */; };
 		569CF38F23CC3E610078D348 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569CF38E23CC3E610078D348 /* NotificationModel.swift */; };
 		569DA19A249B3A6F00CE4A51 /* ViewLikeVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569DA199249B3A6F00CE4A51 /* ViewLikeVideoVC.swift */; };
 		569DA19C249B3C2200CE4A51 /* BlokedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569DA19B249B3C2200CE4A51 /* BlokedViewController.swift */; };
 		569DA19F249B44AC00CE4A51 /* NotificationsettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569DA19D249B44AC00CE4A51 /* NotificationsettingCell.swift */; };
 		569DA1A0249B44AC00CE4A51 /* NotificationsettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569DA19E249B44AC00CE4A51 /* NotificationsettingCell.xib */; };
+		56C897EF24AF105600A9E8CE /* PostLikedUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C897EE24AF105600A9E8CE /* PostLikedUserVC.swift */; };
 		56CB0CB1239E8819008F6DF0 /* FolloweViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB0CB0239E8819008F6DF0 /* FolloweViewController.swift */; };
 		56CB0CB4239E8876008F6DF0 /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB0CB2239E8876008F6DF0 /* FollowerTableViewCell.swift */; };
 		56CB0CB5239E8876008F6DF0 /* FollowerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56CB0CB3239E8876008F6DF0 /* FollowerTableViewCell.xib */; };
@@ -219,11 +221,13 @@
 		56800DEC23702C1D00248F68 /* MessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
 		56800DEF23702C3800248F68 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		56800DF123702DCF00248F68 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		5699C32424BC78FB009B6815 /* shoutoutLoudVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shoutoutLoudVC.swift; sourceTree = "<group>"; };
 		569CF38E23CC3E610078D348 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		569DA199249B3A6F00CE4A51 /* ViewLikeVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLikeVideoVC.swift; sourceTree = "<group>"; };
 		569DA19B249B3C2200CE4A51 /* BlokedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlokedViewController.swift; sourceTree = "<group>"; };
 		569DA19D249B44AC00CE4A51 /* NotificationsettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsettingCell.swift; sourceTree = "<group>"; };
 		569DA19E249B44AC00CE4A51 /* NotificationsettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationsettingCell.xib; sourceTree = "<group>"; };
+		56C897EE24AF105600A9E8CE /* PostLikedUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLikedUserVC.swift; sourceTree = "<group>"; };
 		56CB0CB0239E8819008F6DF0 /* FolloweViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolloweViewController.swift; sourceTree = "<group>"; };
 		56CB0CB2239E8876008F6DF0 /* FollowerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerTableViewCell.swift; sourceTree = "<group>"; };
 		56CB0CB3239E8876008F6DF0 /* FollowerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowerTableViewCell.xib; sourceTree = "<group>"; };
@@ -383,6 +387,8 @@
 				5601199823E2D78A00FE2C22 /* BioAuthViewController.swift */,
 				569DA199249B3A6F00CE4A51 /* ViewLikeVideoVC.swift */,
 				569DA19B249B3C2200CE4A51 /* BlokedViewController.swift */,
+				56C897EE24AF105600A9E8CE /* PostLikedUserVC.swift */,
+				5699C32424BC78FB009B6815 /* shoutoutLoudVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -683,6 +689,7 @@
 				56800DE92370261800248F68 /* HomeTabViewController.swift in Sources */,
 				56D8A9D1239FBC3E00B76985 /* GroupChatMsgModel.swift in Sources */,
 				566A219D2370688C00FDE713 /* ProfileViewController.swift in Sources */,
+				5699C32524BC78FB009B6815 /* shoutoutLoudVC.swift in Sources */,
 				56800DED23702C1D00248F68 /* MessageTableViewCell.swift in Sources */,
 				564C77642394E9CC0069D551 /* ViewUserProfileVC.swift in Sources */,
 				182AF64F237AD38F00232E64 /* SettingRowTableViewCell.swift in Sources */,
@@ -694,6 +701,7 @@
 				56D8A9D3239FC8C400B76985 /* AddCommentModel.swift in Sources */,
 				569DA19C249B3C2200CE4A51 /* BlokedViewController.swift in Sources */,
 				566A21A02370692B00FDE713 /* ProfileTableViewCell.swift in Sources */,
+				56C897EF24AF105600A9E8CE /* PostLikedUserVC.swift in Sources */,
 				56800DF023702C3800248F68 /* MessageViewController.swift in Sources */,
 				56EF6AF923C3260D009A3DBF /* ASVideoLayerObject.swift in Sources */,
 				5601199C23E2EC7100FE2C22 /* SecurityTableViewCell.swift in Sources */,
@@ -763,7 +771,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Amarinder Gurna (CXXR6BK656)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -826,7 +834,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Amarinder Gurna (CXXR6BK656)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -856,11 +864,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_ENTITLEMENTS = Bybocam/Bybocam.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Amarinder Gurna (CXXR6BK656)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = N7YAQNH24G;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Bybocam/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -879,11 +888,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_ENTITLEMENTS = Bybocam/Bybocam.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Amarinder Gurna (CXXR6BK656)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = N7YAQNH24G;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Bybocam/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

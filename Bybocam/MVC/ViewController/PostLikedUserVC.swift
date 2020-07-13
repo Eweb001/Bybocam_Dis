@@ -1,11 +1,10 @@
 //
-//  FolloweViewController.swift
+//  PostLikedUserVC.swift
 //  Bybocam
 //
-//  Created by eWeb on 09/12/19.
-//  Copyright © 2019 eWeb. All rights reserved.
+//  Created by eWeb on 03/07/20.
+//  Copyright © 2020 eWeb. All rights reserved.
 //
-
 
 import UIKit
 import Alamofire
@@ -17,7 +16,7 @@ import AVKit
 import Photos
 import Toast_Swift
 import iOSPhotoEditor
-class FolloweViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
+class PostLikedUserVC: UIViewController,UITableViewDelegate,UITableViewDataSource
 {
     
     //MARK:- for insta code
@@ -30,7 +29,7 @@ class FolloweViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     
     
-    
+    var POSTID = ""
     
     //------------------//------------------//------------------//
     
@@ -54,16 +53,18 @@ class FolloweViewController: UIViewController,UITableViewDelegate,UITableViewDat
     var apiResponse:AddVideoModel?
     var GetFavUserModelData:GetFavouriteUserModel?
     var userIDProfile = ""
-    
+    var USERID = ""
+    var RecomenApiResponse:ReccomendationModel?
     override func viewDidLoad()
     {
         super.viewDidLoad()
-     
-       
+        
+        
         messageTable.delegate = self
         messageTable.dataSource = self
         messageTable.register(UINib(nibName: "FollowerTableViewCell", bundle: nil), forCellReuseIdentifier: "FollowerTableViewCell")
         nodataFoundLbl.isHidden = true
+        
         if !NetworkEngine.networkEngineObj.isInternetAvailable()
         {
             
@@ -71,67 +72,15 @@ class FolloweViewController: UIViewController,UITableViewDelegate,UITableViewDat
         }
         else
         {
-             followerUserApi()
+            PostLikedUserApi()
         }
-        
-        
-       
-       NotificationCenter.default.addObserver(self, selector: #selector(self.FromFolloweViewController(notification:)), name: Notification.Name("FromFolloweViewController"), object: nil)
-        
-           NotificationCenter.default.addObserver(self, selector: #selector(self.LikeUserListFromFolloweViewController(notification:)), name: Notification.Name("LikeUserListFromFolloweViewController"), object: nil)
-        
         
         
         // resultsButton.addTarget(self, action: #selector(showResults), for: .touchUpInside)
         
     }
-    //MARK:- goCommentUserProfile using notification
-    
-    @objc func FromFolloweViewController(notification: Notification)
-    {
-        print("notification data = \(notification)")
-        
-        
-        if let dict = (notification.userInfo as? NSDictionary)
-        {
-            if let POSTID = dict.value(forKey: "POSTID") as? String
-            {
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "PostCommentViewController") as! PostCommentViewController
-                
-                vc.userIDProfile = DEFAULT.value(forKey: "USER_ID") as! String
-                
-                vc.POSTID = POSTID
-                vc.USERID = DEFAULT.value(forKey: "USER_ID") as! String
-                
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
-        }
-    }
-    //MARK:- goCommentUserProfile using notification
-    
-    @objc func LikeUserListFromFolloweViewController(notification: Notification)
-    {
-        print("notification data = \(notification)")
-        
-        
-        if let dict = (notification.userInfo as? NSDictionary)
-        {
-            if let POSTID = dict.value(forKey: "POSTID") as? String
-            {
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "PostLikedUserVC") as!  PostLikedUserVC
-                
-              //  vc.userIDProfile = DEFAULT.value(forKey: "USER_ID") as! String
-                
-                vc.POSTID = POSTID
-               // vc.USERID = DEFAULT.value(forKey: "USER_ID") as! String
-                
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
-        }
-    }
     
     
-   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return self.GetFavUserModelData?.data?.count ?? 0
@@ -158,31 +107,45 @@ class FolloweViewController: UIViewController,UITableViewDelegate,UITableViewDat
                     cell.profileImg.sd_setImage(with: profile_img, placeholderImage: UIImage(named: "loding"), options: .refreshCached, context: nil)
                 }
         }
-
+        
         
         
         return cell
     }
+    /*
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "FollowerUserViewController") as! FollowerUserViewController
-        
-        
-        let indexData = GetFavUserModelData?.data?[indexPath.row]
-        
-        vc.USERID = indexData?.userId ?? "9"
-        
-        self.navigationController?.pushViewController(vc, animated: true)
-        
+        let Alett = UIAlertController(title: "Alert!", message: "Are you sure want to unblocked user?", preferredStyle: .alert)
+        Alett.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (UIAlertAction) in
+            
+        }))
+        Alett.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (UIAlertAction) in
+            let dict = self.GetFavUserModelData?.data?[indexPath.row]
+            
+            self.USERID = dict?.userId ?? ""
+            
+            if !NetworkEngine.networkEngineObj.isInternetAvailable()
+            {
+                
+                NetworkEngine.showInterNetAlert(vc: self)
+            }
+            else
+            {
+                self.PostLikedUserApi()
+            }
+            
+        }))
+        self.present(Alett, animated: true, completion:nil)
     }
+    */
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         return 110
     }
     
-   
     
-    func followerUserApi()
+    
+    func PostLikedUserApi()
     {
         SVProgressHUD.show()
         var USERID = "4"
@@ -191,10 +154,11 @@ class FolloweViewController: UIViewController,UITableViewDelegate,UITableViewDat
             USERID = NewUSERid
         }
         
-        let para = ["userId" : self.userIDProfile] as [String : AnyObject]
+        let para = ["postId" : self.POSTID,
+                    "userId" : USERID] as [String : String]
         print(para)
         
-        ApiHandler.PostModelApiPostMethod(url: Follower_USER_URL, parameters: para, Header: [ : ]) { (respData, error) in
+        ApiHandler.PostModelApiPostMethod(url: Post_LIKED_User, parameters: para, Header: [ : ]) { (respData, error) in
             
             do
             {
@@ -212,7 +176,7 @@ class FolloweViewController: UIViewController,UITableViewDelegate,UITableViewDat
                         }
                         else
                         {
-                           self.messageTable.reloadData()
+                            self.messageTable.reloadData()
                             
                             //                            self.noDataFoundLbl.isHidden = true
                         }
@@ -237,11 +201,61 @@ class FolloweViewController: UIViewController,UITableViewDelegate,UITableViewDat
             }
         }
     }
+    func PostLikedUserApi2()
+    {
+        
+        SVProgressHUD.show()
+        
+        var USERID = "4"
+        if let NewUSERid = DEFAULT.value(forKey: "USER_ID") as? String
+        {
+            USERID = NewUSERid
+        }
+        let para = ["postId" : self.POSTID,
+                    "userId" : self.USERID] as [String : String]
+        print(para)
+        
+        ApiHandler.PostModelApiPostMethod(url: Post_LIKED_User, parameters: para, Header: [ : ]) { (respData, error) in
+            
+            do
+            {
+                let decoder = JSONDecoder()
+                if respData != nil
+                {
+                    self.RecomenApiResponse =  try decoder.decode(ReccomendationModel.self, from: respData!)
+                    
+                    self.navigationController?.popViewController(animated: true)
+                    if self.RecomenApiResponse?.status  == "success"
+                    {
+                        SVProgressHUD.dismiss()
+                        
+                        
+                    }
+                    
+                    
+                }
+                else
+                {
+                    SVProgressHUD.dismiss()
+                    
+                    // self.view.makeToast(self.RecomenApiResponse?.message)
+                    print("Error")
+                }
+            }
+            catch let error
+            {
+                print(error)
+                
+                SVProgressHUD.dismiss()
+                
+            }
+        }
+    }
     
-
+    
     @IBAction func goBack(_ sender: UIBarButtonItem)
     {
-       self.navigationController?.popViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
 }

@@ -77,7 +77,7 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+     
         self.mainNameLbl.UILableTextShadow(color: UIColor.black )
         userNameTxt.placeholderColor(UIColor.black)
         passwordTxt.placeholderColor(UIColor.black)

@@ -8,15 +8,28 @@
 
 import Foundation
 
-let BASE_URL = "http://srv1.a1professionals.net/bybocam/api/user/"
+//let BASE_URL = "http://srv1.a1professionals.net/bybocam/api/user/"
+//
+//let Image_Base_URL = "http://srv1.a1professionals.net/bybocam/assets/images/"
+//
+// let Message_Image_Base_URL = "http://srv1.a1professionals.net/bybocam/assets/messageAsImage/"
+//
+//let Video_Base_URL = "http://srv1.a1professionals.net/bybocam/assets/videos/"
+//
+//let Post_Base_URL = "http://srv1.a1professionals.net/bybocam/assets/posts/"
 
-let Image_Base_URL = "http://srv1.a1professionals.net/bybocam/assets/images/"
 
- let Message_Image_Base_URL = "http://srv1.a1professionals.net/bybocam/assets/messageAsImage/"
 
-let Video_Base_URL = "http://srv1.a1professionals.net/bybocam/assets/videos/"
+let BASE_URL = "https://a1professionals.net/bybocam/api/user/"
 
-let Post_Base_URL = "http://srv1.a1professionals.net/bybocam/assets/posts/"
+let Image_Base_URL = "https://a1professionals.net/bybocam/assets/images/"
+
+let Message_Image_Base_URL = "https://a1professionals.net/bybocam/assets/messageAsImage/"
+
+let Video_Base_URL = "https://a1professionals.net/bybocam/assets/videos/"
+
+let Post_Base_URL = "https://a1professionals.net/bybocam/assets/posts/"
+
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -90,3 +103,5 @@ let BLOCKED_USERLIST = BASE_URL + "getBlockedUsersByMe"
 let LIKED_VIDEO = BASE_URL + "getPostsLikedByMe"
 
 let DELETE_VIDEO = BASE_URL + "deletePost"
+
+let Post_LIKED_User = BASE_URL + "getPostsLikeUserList"

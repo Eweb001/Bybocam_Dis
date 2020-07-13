@@ -139,7 +139,13 @@ class ViewUserProfileVC: UIViewController
         
           NotificationCenter.default.addObserver(self, selector: #selector(self.ViewUserProfileVCCommentUserProfile(notification:)), name: Notification.Name("ViewUserProfileVCCommentUserProfile"), object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.LikeUserListViewUserProfileVCCommentUserProfile(notification:)), name: Notification.Name("LikeUserListViewUserProfileVCCommentUserProfile"), object: nil)
+        
+        
         NotificationCenter.default.addObserver(self, selector: #selector(self.ViewUserProfileVCReloadForUpdate(notification:)), name: Notification.Name("ViewUserProfileVCReloadForUpdate"), object: nil)
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.GoLikeuserListControllerVC(notification:)), name: Notification.Name("GoLikeuserListController"), object: nil)
         
     }
     override func viewWillAppear(_ animated: Bool)
@@ -229,6 +235,55 @@ class ViewUserProfileVC: UIViewController
             }
         }
     }
+    //MARK:- goCommentUserProfile using notification
+    
+    @objc func LikeUserListViewUserProfileVCCommentUserProfile(notification: Notification)
+    {
+        print("notification data = \(notification)")
+        
+        
+        if let dict = (notification.userInfo as? NSDictionary)
+        {
+            if let POSTID = dict.value(forKey: "POSTID") as? String
+            {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "PostLikedUserVC") as! PostLikedUserVC
+                
+                //vc.userIDProfile = DEFAULT.value(forKey: "USER_ID") as! String
+                
+                vc.POSTID = POSTID
+               // vc.USERID = DEFAULT.value(forKey: "USER_ID") as! String
+                
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
+    
+    //MARK:- get like user list using notification
+    
+    @objc func GoLikeuserListControllerVC(notification: Notification)
+    {
+        print("notification data = \(notification)")
+        
+        
+        if let dict = (notification.userInfo as? NSDictionary)
+        {
+            if let POSTID = dict.value(forKey: "POSTID") as? String
+            {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "PostLikedUserVC") as! PostLikedUserVC
+                
+              //  vc.userIDProfile = DEFAULT.value(forKey: "USER_ID") as! String
+                
+                vc.POSTID = POSTID
+               // vc.USERID = DEFAULT.value(forKey: "USER_ID") as! String
+                
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
+    
+    
+    
+    
     @IBAction func goToFollower(_ sender: UIButton)
     {
         
@@ -788,6 +843,8 @@ extension  ViewUserProfileVC : UICollectionViewDelegate,UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfileTopCollectionViewCell", for: indexPath) as! ProfileTopCollectionViewCell
         
         let dict = self.ModelApiResponse?.userVideos?[indexPath.row]
+        
+        
       //  cell.img.image = nil
 //        if let  imageData = dict?.videoThumbnailimg
 //        {
@@ -910,6 +967,19 @@ extension  ViewUserProfileVC : UICollectionViewDelegate,UICollectionViewDataSour
             
         }
         
+    }
+    @objc func LikeBtnListAction(_ sender:UIButton)
+    {
+        
+        print(sender.tag)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "PostLikedUserVC") as! PostLikedUserVC
+        
+        vc.userIDProfile = DEFAULT.value(forKey: "USER_ID") as! String
+        let dict =  self.ModelApiResponse?.postData?.reversed()[sender.tag]
+        vc.POSTID = dict?.postId ?? "0"
+        vc.USERID = DEFAULT.value(forKey: "USER_ID") as! String
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func TablePlayVideo(_ sender:UIButton)
@@ -1092,14 +1162,15 @@ extension  ViewUserProfileVC : UITableViewDataSource,UITableViewDelegate
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell") as! ProfileTableViewCell
             
-            cell.buttomView.isHidden = true
-            cell.buttomConst.constant = 0
+           // cell.buttomView.isHidden = flase
+           // cell.buttomConst.constant = 0
             
             let dict =  self.ModelApiResponse?.postData?.reversed()[indexPath.row]
             
             cell.likBtn.tag = indexPath.row
             cell.likBtn.addTarget(self, action: #selector(LikeBtnAction), for: .touchUpInside)
-            
+            cell.likeListBtn.tag = indexPath.row
+            cell.likeListBtn.addTarget(self, action: #selector(LikeBtnListAction), for: .touchUpInside)
             cell.commentBtn.tag = indexPath.row
             cell.commentBtn.addTarget(self, action: #selector(CommentBtnAction), for: .touchUpInside)
             
@@ -1229,20 +1300,20 @@ extension  ViewUserProfileVC : UITableViewDataSource,UITableViewDelegate
         
         if self.listSelected == "yes"
         {
-            return 350
+            return 410
         }
         else
         {
             if ((self.ModelApiResponse?.postData?.count == 0) || (self.ModelApiResponse?.postData?.count == 1))
             {
-                return 220
+                return 300
             }
             else
             {
                 let height = (Double(self.ModelApiResponse?.postData?.count ?? 0)/2.0).rounded(.up)
                 
                 print("height rounded = \(height)")
-                return (CGFloat(220*height))
+                return (CGFloat(300*height))
             }
             
         }

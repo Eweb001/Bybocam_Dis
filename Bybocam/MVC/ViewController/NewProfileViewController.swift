@@ -126,6 +126,8 @@ class NewProfileViewController: UIViewController,UITableViewDataSource,UITableVi
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.goCommentUserProfileView(notification:)), name: Notification.Name("FromUsergProfileCommentUserProfile"), object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.LikeUserListgoCommentUserProfileView(notification:)), name: Notification.Name("LikeUserListFromUsergProfileCommentUserProfile"), object: nil)
+        
          NotificationCenter.default.addObserver(self, selector: #selector(self.UserProfileReloadForUpdate(notification:)), name: Notification.Name("NewUserVCReloadForUpdate"), object: nil)
         
         
@@ -261,6 +263,28 @@ class NewProfileViewController: UIViewController,UITableViewDataSource,UITableVi
                    vc.USERID = DEFAULT.value(forKey: "USER_ID") as! String
                 
                         self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
+    //MARK:- goCommentUserProfile using notification
+    
+    @objc func LikeUserListgoCommentUserProfileView(notification: Notification)
+    {
+        print("notification data = \(notification)")
+        
+        
+        if let dict = (notification.userInfo as? NSDictionary)
+        {
+            if let POSTID = dict.value(forKey: "POSTID") as? String
+            {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "PostLikedUserVC") as! PostLikedUserVC
+                
+               // vc.userIDProfile = DEFAULT.value(forKey: "USER_ID") as! String
+                
+                vc.POSTID = POSTID
+               // vc.USERID = DEFAULT.value(forKey: "USER_ID") as! String
+                
+                self.navigationController?.pushViewController(vc, animated: true)
             }
         }
     }
@@ -437,7 +461,7 @@ class NewProfileViewController: UIViewController,UITableViewDataSource,UITableVi
         
         self.POSTID = dict?.postId ?? "0"
         
-        let alert = UIAlertController(title: "Alert", message: "Are you sure you want to Delete this post?", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Alert", message: "Are you sure you want to Delete this post?", preferredStyle: UIAlertController.Style.actionSheet)
         
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (action: UIAlertAction!) in
             
@@ -547,6 +571,9 @@ class NewProfileViewController: UIViewController,UITableViewDataSource,UITableVi
            
             cell.likBtn.tag = indexPath.row
             cell.likBtn.addTarget(self, action: #selector(LikeBtnAction), for: .touchUpInside)
+            cell.likeListBtn.tag = indexPath.row
+            cell.likeListBtn.addTarget(self, action: #selector(LikeBtnListAction), for: .touchUpInside)
+            
             cell.deleteBtn.isHidden=false
             
             cell.deleteBtn.tag = indexPath.row
@@ -789,6 +816,24 @@ class NewProfileViewController: UIViewController,UITableViewDataSource,UITableVi
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    //MARK:-Like list
+    
+    @objc func LikeBtnListAction(_ sender:UIButton)
+    {
+        
+        print(sender.tag)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "PostLikedUserVC") as! PostLikedUserVC
+        
+        vc.userIDProfile = DEFAULT.value(forKey: "USER_ID") as! String
+        let dict =  self.ModelApiResponse?.postData?.reversed()[sender.tag]
+        vc.POSTID = dict?.postId ?? "0"
+        vc.USERID = DEFAULT.value(forKey: "USER_ID") as! String
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
     
     //MARK:- list Btn Action btn click
     

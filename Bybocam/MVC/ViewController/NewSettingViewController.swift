@@ -20,9 +20,9 @@ class NewSettingViewController: UIViewController, UITableViewDataSource, UITable
     
     var LogoutApiResponse:SignUpModel?
     
-    var nameListArray = ["Notification","Privacy","Help","Report a Problem","Delete Account","Clear Search History","Clear Conversation","Clear Data","Term & Use","Share the App","Notification Setting"," Touch ID Authentication","Liked Post","Blocked User","Log Out"]
+    var nameListArray = ["Notification","Privacy","Help","Shoutout loud","Report a Problem","Delete Account","Clear Search History","Clear Conversation","Clear Data","Term & Use","Share the App","Notification Setting"," Touch ID Authentication","Liked Post","Blocked User","Log Out"]
     
-    var ImageListArray = ["notification","privacy","help-icon","Report a problem","delete-user","delete_forever","delete_forever","Clear_data","term-& use","Share-the-app","notification","privacy","My-favourites","User_Name","log-out"]
+    var ImageListArray = ["notification","privacy","help-icon","Report a problem","Report a problem","delete-user","delete_forever","delete_forever","Clear_data","term-& use","Share-the-app","notification","privacy","My-favourites","User_Name","log-out"]
     
     
     // View Profile Array
@@ -202,14 +202,14 @@ class NewSettingViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         
-        if indexPath.row == 10
+        if indexPath.row == 11
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationsettingCell") as! NotificationsettingCell
            // cell.imgIcon.image = UIImage(named: ImageListArray[indexPath.row])
             cell.nameLbl.text = nameListArray[indexPath.row]
             return cell
         }
-        if indexPath.row == 11
+        if indexPath.row == 12
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationsettingCell") as! NotificationsettingCell
             // cell.imgIcon.image = UIImage(named: ImageListArray[indexPath.row])
@@ -259,12 +259,18 @@ class NewSettingViewController: UIViewController, UITableViewDataSource, UITable
             let privacy = self.storyboard?.instantiateViewController(withIdentifier: "PrivacyViewController") as! PrivacyViewController
             self.navigationController?.pushViewController(privacy, animated: true)
         }
-        else if (indexPath.row == 3)
+            else if (indexPath.row == 3)
+            {
+                let new = self.storyboard?.instantiateViewController(withIdentifier: "shoutoutLoudVC") as! shoutoutLoudVC
+                self.navigationController?.pushViewController(new, animated: true)
+            }
+            
+        else if (indexPath.row == 4)
         {
             let new = self.storyboard?.instantiateViewController(withIdentifier: "reportAproblem") as! reportAproblem
             self.navigationController?.pushViewController(new, animated: true)
         }
-        else if (indexPath.row == 4)
+        else if (indexPath.row == 5)
         {
             let alert = UIAlertController(title: "Alert", message: "Are you sure you want to Delete your account?", preferredStyle: UIAlertController.Style.alert)
             
@@ -287,7 +293,7 @@ class NewSettingViewController: UIViewController, UITableViewDataSource, UITable
             }))
             present(alert, animated: true, completion: nil)
         }
-        else if (indexPath.row == 5)
+        else if (indexPath.row == 6)
         {
             let alert = UIAlertController(title: "Alert", message: "Are you sure you want to Clear your search history?", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Clear", style: .destructive, handler: { (action: UIAlertAction!) in
@@ -299,7 +305,7 @@ class NewSettingViewController: UIViewController, UITableViewDataSource, UITable
             }))
             present(alert, animated: true, completion: nil)
         }
-        else if (indexPath.row == 6)
+        else if (indexPath.row == 7)
         {
             let alert = UIAlertController(title: "Alert", message: "Are you sure you want to Clear your Conversation?", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Clear", style: .destructive, handler: { (action: UIAlertAction!) in
@@ -311,7 +317,7 @@ class NewSettingViewController: UIViewController, UITableViewDataSource, UITable
             }))
             present(alert, animated: true, completion: nil)
         }
-        else if (indexPath.row == 7)
+        else if (indexPath.row == 8)
         {
             let alert = UIAlertController(title: "Alert", message: "Are you sure you want to Clear your data?", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Clear", style: .destructive, handler: { (action: UIAlertAction!) in
@@ -323,31 +329,31 @@ class NewSettingViewController: UIViewController, UITableViewDataSource, UITable
             }))
             present(alert, animated: true, completion: nil)
         }
-        else if (indexPath.row == 8)
+        else if (indexPath.row == 9)
         {
             let term = self.storyboard?.instantiateViewController(withIdentifier: "TermAndUseView") as! TermAndUseView
             self.navigationController?.pushViewController(term, animated: true)
         }
-        else if (indexPath.row == 9)
+        else if (indexPath.row == 10)
         {
             let ActivityController = UIActivityViewController(activityItems: ["www.google.com"], applicationActivities: nil)
             ActivityController.popoverPresentationController?.sourceView = self.view
             self.present(ActivityController, animated: true, completion: nil)
             
         }
-        else if (indexPath.row == 12)
+        else if (indexPath.row == 13)
         {
             let term = self.storyboard?.instantiateViewController(withIdentifier: "ViewLikeVideoVC") as! ViewLikeVideoVC
             self.navigationController?.pushViewController(term, animated: true)
             
         }
-        else if (indexPath.row == 13)
+        else if (indexPath.row == 14)
         {
             let term = self.storyboard?.instantiateViewController(withIdentifier: "BlokedViewController") as! BlokedViewController
             self.navigationController?.pushViewController(term, animated: true)
             
         }
-        else if (indexPath.row == 14)
+        else if (indexPath.row == 15)
         {
             let alert = UIAlertController(title: "Alert", message: "Are you sure you want to logout?", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Logout", style: .destructive, handler: { (action: UIAlertAction!) in
