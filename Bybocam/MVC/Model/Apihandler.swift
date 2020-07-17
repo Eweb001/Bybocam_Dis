@@ -309,6 +309,7 @@
             {
                 //Helper.Alertmessage(title: "Alert", message: (response.error?.localizedDescription)!, vc: nil)
                 SVProgressHUD.dismiss()
+                
                 completion(nil,response.error)
                 print("Error \(String(describing: response.result.error))")
                 

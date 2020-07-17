@@ -1,9 +1,9 @@
 //
-//  SearchViewController.swift
+//  PersonalVideoVC.swift
 //  Bybocam
 //
-//  Created by APPLE on 12/11/19.
-//  Copyright © 2019 eWeb. All rights reserved.
+//  Created by Eweb on 16/07/20.
+//  Copyright © 2020 eWeb. All rights reserved.
 //
 
 import UIKit
@@ -20,12 +20,12 @@ import AlamofireImage
 import MMPlayerView
 
 
-class SearchViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate
+class PersonalVideoVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate
 {
     
     @IBOutlet weak var slideView: ImageSlideshow!
-    @IBOutlet weak var searchT: UITextField!
-    @IBOutlet var searchUiview: UIView!
+
+  
     @IBOutlet weak var collectView: UICollectionView!
     var value = "0"
     var POSTID = ""
@@ -37,7 +37,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITextViewDel
     var USERID = ""
     // SEARCHING ARRAY
     
-    var ModelApiResponse:SearchPostModel?
+    var ModelApiResponse:LoudVideoModel?
     
     var LogoutApiResponse:SignUpModel?
     var mainArray = NSMutableArray()
@@ -65,13 +65,11 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITextViewDel
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        searchUiview.layer.cornerRadius = 25
-        searchUiview.layer.borderWidth = 1
-        searchT.placeholderColor(UIColor.black)
+       
         collectView.delegate = self
         collectView.dataSource = self
-        searchUiview.layer.borderColor = UIColor.gray.cgColor
-        collectView.register(UINib(nibName: "ProfileGridCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ProfileGridCollectionViewCell")
+       
+        collectView.register(UINib(nibName: "LoudCollectionCell", bundle: nil), forCellWithReuseIdentifier: "LoudCollectionCell")
         
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(SearchViewController.didTap))
         slideView.addGestureRecognizer(recognizer)
@@ -85,9 +83,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITextViewDel
         {
             self.SearchPostApi()
         }
-         searchT.addTarget(self, action: #selector(searchTyping), for: .allEditingEvents)
-         searchT.delegate = self
-         searchT.addTarget(self, action: #selector(self.textFieldDidChange), for: .editingChanged)
+        
     }
     override func viewWillAppear(_ animated: Bool)
     {
@@ -123,24 +119,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITextViewDel
     {
         
     }
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
-    {
-        if let text = searchT.text,
-            let textRange = Range(range, in: text)
-        {
-            let updatedText = text.replacingCharacters(in: textRange,with: string)
-            if !NetworkEngine.networkEngineObj.isInternetAvailable()
-            {
-              NetworkEngine.showInterNetAlert(vc: self)
-            }
-            else
-            {
-             self.SearchPostApi()
-            }
-            
-        }
-        return true
-    }
+  
     
     @objc func didTap()
     {
@@ -148,14 +127,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITextViewDel
     }
     @objc func textFieldDidChange(textfield: UITextField)
     {
-        if textfield.text?.count == 0
-        {
-            value = "0"
-        }
-        else
-        {
-           value = searchT.text!
-        }
+      
     }
     @objc func textFieldDidEndEditing(_ textField: UITextField)
     {
@@ -199,38 +171,56 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITextViewDel
         collectView.reloadData()
         
     }
-    @IBAction func ClickingSearchBtn(_ sender: UIButton)
-    {
-        if searchT.text == ""
-        {
-            let alert = UIAlertController(title: "Alert", message: "Please type name for search", preferredStyle: UIAlertController.Style.alert)
-            
-            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
-            }))
-            present(alert, animated: true, completion: nil)
-        }
-        else
-        {
-            if !NetworkEngine.networkEngineObj.isInternetAvailable()
-            {
-              NetworkEngine.showInterNetAlert(vc: self)
-            }
-            else
-            {
-                 self.SearchPostApi()
-            }
-        }
-    }
+  
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return self.ModelApiResponse?.postData?.count ?? 0//searchedArray.count
+        return self.ModelApiResponse?.data?.count ?? 0//searchedArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfileGridCollectionViewCell", for: indexPath) as! ProfileGridCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LoudCollectionCell", for: indexPath) as! LoudCollectionCell
         
-        let dict = self.ModelApiResponse?.postData?.reversed()[indexPath.row]
+        let dict = self.ModelApiResponse?.data?.reversed()[indexPath.row]
+        
+        
+        cell.userNameLbl.text = (dict?.firstName ?? "") + " " + (dict?.lastName ?? "")
+        cell.playVideo.tag = indexPath.item
+        cell.playVideo.isHidden = true
+        if let newImgg = dict?.videoImage
+                            {
+                                if newImgg != ""
+                                {
+                                    cell.playVideo.isHidden = true
+                                    cell.openImage.isHidden = false
+
+                                    let image_value = RANDOM_Base_URL + newImgg
+                                    print(image_value)
+                                    let profile_img = URL(string: image_value)!
+                                    DispatchQueue.global(qos: .userInitiated).async
+                                        {
+                                            cell.mainImg.sd_setImage(with: profile_img, placeholderImage: UIImage(named: "loding"), options: .refreshCached, context: nil)
+                                    }
+
+//                                    let player = AVPlayer(url: profile_img)
+//                                    let playerLayer = AVPlayerLayer(player: player)
+//                                    playerLayer.frame = CGRect(x: 0, y: 0, width: cell.videoPlayerSuperView.frame.width, height: cell.videoPlayerSuperView.frame.height)
+//
+//                                    cell.videoPlayerSuperView.layer.addSublayer(playerLayer)
+//        //                            cell.layer.addSublayer(playerLayer)
+//                                    player.isMuted=true
+//                                    player.play()
+
+                                }
+
+
+
+                            }
+                    cell.playVideo.isHidden = false
+                    cell.playVideo.tag = indexPath.row
+                    cell.playVideo.addTarget(self, action: #selector(CollectionPlayVideo), for: .touchUpInside)
+        
+        /*
         cell.plyBtn.tag = indexPath.item
         cell.plyBtn.isHidden = true
         
@@ -427,7 +417,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITextViewDel
             cell.plyBtn.addTarget(self, action: #selector(CollectionPlayVideo), for: .touchUpInside)
  
         }
-        
+        */
        
         return cell
     }
@@ -442,28 +432,28 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITextViewDel
    
     
     
-    @objc func OpenImgBtn(_ sender:UIButton)
-    {
-        let dataDict = self.ModelApiResponse?.postData?.reversed()[sender.tag]
-        
-        let postType1 = dataDict?.postType
-        
-        self.slideView.isHidden = false
-        
-        if let newImgg = dataDict?.postImage
-        {
-            let image_value = Post_Base_URL + newImgg
-            print(image_value)
-            
-            slideView.activityIndicator = DefaultActivityIndicator(style: .white, color: nil)
-            
-            slideView.setImageInputs([
-                
-            AlamofireSource(urlString: image_value, placeholder: #imageLiteral(resourceName: "loding"))!])
-            
-            slideView.presentFullScreenController(from: self)
-        }
-    }
+  //  @objc func OpenImgBtn(_ sender:UIButton)
+//    {
+//        let dataDict = self.ModelApiResponse?.data?.reversed()[sender.tag]
+//
+//        let postType1 = dataDict?.postType
+//
+//        self.slideView.isHidden = false
+//
+//        if let newImgg = dataDict?.postImage
+//        {
+//            let image_value = Post_Base_URL + newImgg
+//            print(image_value)
+//
+//            slideView.activityIndicator = DefaultActivityIndicator(style: .white, color: nil)
+//
+//            slideView.setImageInputs([
+//
+//            AlamofireSource(urlString: image_value, placeholder: #imageLiteral(resourceName: "loding"))!])
+//
+//            slideView.presentFullScreenController(from: self)
+//        }
+//    }
     func getThumbnailImage(forUrl url: URL) -> UIImage?
     {
         let asset: AVAsset = AVAsset(url: url)
@@ -480,28 +470,28 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITextViewDel
     }
     @objc func CollectionPlayVideo(_ sender:UIButton)
     {
-        let dict = self.ModelApiResponse?.postData?.reversed()[sender.tag]
-        if let  imageData = dict?.postImageVideo
+        let dict = self.ModelApiResponse?.data?.reversed()[sender.tag]
+        if let  imageData = dict?.videoName
         {
-            
+
             if imageData != ""
             {
-                let baseUrl = Post_Base_URL + imageData
+                let baseUrl = RANDOM_Base_URL + imageData
                 let url = URL(string: baseUrl)!
-                
+
                 let player = AVPlayer(url: url)
-                
+
                     let vc = AVPlayerViewController()
                     vc.player = player
-                
+
                     self.present(vc, animated: true)
                     {
                         vc.player?.play()
                     }
              }
-            
+
         }
-        
+
     }
  
     @IBAction func goBack(_ sender: UIBarButtonItem)
@@ -515,35 +505,35 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITextViewDel
     
     
     
-    @objc func LikeBtnAction(_ sender:UIButton)
-    {
-        let dict =  self.ModelApiResponse?.postData?.reversed()[sender.tag]
-        print(sender.tag)
-        self.POSTID = dict?.postId ?? "0"
-        
-        
-        let likeStatus = dict?.isliked ?? "0"
-        
-        if likeStatus == "0"
-        {
-            self.LIKESTATUS = "1"
-        }
-        else
-        {
-            self.LIKESTATUS = "0"
-        }
-        
-        if !NetworkEngine.networkEngineObj.isInternetAvailable()
-        {
-            
-            NetworkEngine.showInterNetAlert(vc: self)
-        }
-        else
-        {
-            self.LikePostApi()
-            
-        }
-    }
+   // @objc func LikeBtnAction(_ sender:UIButton)
+//    {
+//        let dict =  self.ModelApiResponse?.data?.reversed()[sender.tag]
+//        print(sender.tag)
+//        self.POSTID = dict?.postId ?? "0"
+//
+//
+//        let likeStatus = dict?.isliked ?? "0"
+//
+//        if likeStatus == "0"
+//        {
+//            self.LIKESTATUS = "1"
+//        }
+//        else
+//        {
+//            self.LIKESTATUS = "0"
+//        }
+//
+//        if !NetworkEngine.networkEngineObj.isInternetAvailable()
+//        {
+//
+//            NetworkEngine.showInterNetAlert(vc: self)
+//        }
+//        else
+//        {
+//            self.LikePostApi()
+//
+//        }
+//    }
     
     
     
@@ -552,18 +542,18 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITextViewDel
     
     
     
-    @objc func CommentBtnAction(_ sender:UIButton)
-    {
-        
-        print(sender.tag)
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "PostCommentViewController") as! PostCommentViewController
-        vc.userIDProfile = self.USERID
-        
-        let dict =  self.ModelApiResponse?.postData?.reversed()[sender.tag]
-        vc.USERID = self.USERID
-        vc.POSTID = dict?.postId ?? "0"
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
+  //  @objc func CommentBtnAction(_ sender:UIButton)
+//    {
+//
+//        print(sender.tag)
+//        let vc = self.storyboard?.instantiateViewController(withIdentifier: "PostCommentViewController") as! PostCommentViewController
+//        vc.userIDProfile = self.USERID
+//
+//        let dict =  self.ModelApiResponse?.data?.reversed()[sender.tag]
+//        vc.USERID = self.USERID
+//        vc.POSTID = dict?.postId ?? "0"
+//        self.navigationController?.pushViewController(vc, animated: true)
+//    }
     
     
     
@@ -571,29 +561,23 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITextViewDel
     
     @IBAction func cancelAct(_ sender: UIBarButtonItem)
     {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "PersonalVideoVC") as! PersonalVideoVC
-             
-               self.navigationController?.pushViewController(vc, animated: true)
-        
-        
-        
-//        let alert = UIAlertController(title: "Alert", message: "Are you sure you want to logout?", preferredStyle: UIAlertController.Style.alert)
-//        alert.addAction(UIAlertAction(title: "Logout", style: .destructive, handler: { (action: UIAlertAction!) in
-//            if !NetworkEngine.networkEngineObj.isInternetAvailable()
-//            {
-//
-//                NetworkEngine.showInterNetAlert(vc: self)
-//            }
-//            else
-//            {
-//                self.LogoutApi()
-//            }
-//
-//         }))
-//        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
-//            print("Handle Cancel Logic here")
-//        }))
-//        present(alert, animated: true, completion: nil)
+        let alert = UIAlertController(title: "Alert", message: "Are you sure you want to logout?", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Logout", style: .destructive, handler: { (action: UIAlertAction!) in
+            if !NetworkEngine.networkEngineObj.isInternetAvailable()
+            {
+                
+                NetworkEngine.showInterNetAlert(vc: self)
+            }
+            else
+            {
+                self.LogoutApi()
+            }
+         
+         }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+            print("Handle Cancel Logic here")
+        }))
+        present(alert, animated: true, completion: nil)
     }
     
     // Logout Api here...
@@ -669,19 +653,12 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITextViewDel
         {
             USERID = NewUSERid
         }
-        var tosearch = "0"
-        
-        if self.searchT.text?.count != 0
-        {
-            tosearch = self.searchT.text!
-        }
-        
-        let para = ["userId" : USERID,
-                    "postSearch" : tosearch]
+    
+        let para = ["userId" : USERID]
         
      print("Home para \(para)")
         
-        ApiHandler.PostModelApiPostMethod(url: SEARCH_POST_URL, parameters: para, Header: [ : ]) { (responsedata, error) in
+        ApiHandler.PostModelApiPostMethod(url: LOUD_POST_URL, parameters: para, Header: [ : ]) { (responsedata, error) in
             
             do
             {
@@ -689,7 +666,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITextViewDel
                 
                 if  responsedata != nil
                 {
-                    self.ModelApiResponse = try decoder.decode(SearchPostModel.self, from: responsedata!)
+                    self.ModelApiResponse = try decoder.decode(LoudVideoModel.self, from: responsedata!)
                     
                     if self.ModelApiResponse?.status == "success"
                     {
@@ -703,6 +680,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITextViewDel
                     {
                         print("Error")
                        // self.view.makeToast(self.ModelApiResponse?.message)
+                        
+                        print(error)
                         self.collectView.reloadData()
                     }
                 }
@@ -710,6 +689,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITextViewDel
             }
             catch let error
             {
+                 print(error)
                 SVProgressHUD.dismiss()
                 print(error)
             }
@@ -885,13 +865,13 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITextViewDel
 //    }
 //}
 
-extension  SearchViewController :UICollectionViewDelegateFlowLayout
+extension  PersonalVideoVC :UICollectionViewDelegateFlowLayout
 {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
 
       //  return CGSize(width: (UIScreen.main.bounds.width/2)-18, height: (UIScreen.main.bounds.height/5)-22 )
-        return CGSize(width: (UIScreen.main.bounds.width/2)-18, height: 240 )
+        return CGSize(width: (UIScreen.main.bounds.width/2)-4, height: 240 )
         
        // return CGSize(width: (UIScreen.main.bounds.width/2)-18, height: 140 )
     }
@@ -906,7 +886,7 @@ extension  SearchViewController :UICollectionViewDelegateFlowLayout
     }
 }
 
-extension SearchViewController
+extension PersonalVideoVC
 {
     func pausePlayeVideos(){
         ASVideoPlayerController.sharedVideoPlayer.pausePlayeVideosFor(tableView: collectView)

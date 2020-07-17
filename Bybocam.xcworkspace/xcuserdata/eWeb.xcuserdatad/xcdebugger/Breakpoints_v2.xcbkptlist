@@ -251,42 +251,10 @@
             filePath = "Bybocam/MVC/ViewController/shoutoutLoudVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "shareVideoAct(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "3A311498-1725-4518-AE07-554D7CE17BC6 - 5819c1d9f7fbc2bf"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Bybocam.shoutoutLoudVC.shareVideoAct(Any) -&gt; ()"
-                  moduleName = "Bybocam"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Eweb/Documents/Amarendra/Bybocam/Bybocam%203%203%202%205%202%202/Bybocam/MVC/ViewController/shoutoutLoudVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "304">
-               </Location>
-               <Location
-                  uuid = "3A311498-1725-4518-AE07-554D7CE17BC6 - 38a5c1c8e000c54b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in Bybocam.shoutoutLoudVC.shareVideoAct(Any) -&gt; ()"
-                  moduleName = "Bybocam"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Eweb/Documents/Amarendra/Bybocam/Bybocam%203%203%202%205%202%202/Bybocam/MVC/ViewController/shoutoutLoudVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "248">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -303,6 +271,38 @@
             endingLineNumber = "41"
             landmarkName = "shareVideoAct(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5A2D20B6-E05D-44C6-9B9C-B017436F0D15"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Bybocam/MVC/ViewController/PersonalVideoVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "684"
+            endingLineNumber = "684"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "72BC0D06-8C61-41ED-9B4F-0870F0174577"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Bybocam/MVC/ViewController/PersonalVideoVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "692"
+            endingLineNumber = "692"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

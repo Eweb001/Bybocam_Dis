@@ -30,6 +30,8 @@ let Video_Base_URL = "https://a1professionals.net/bybocam/assets/videos/"
 
 let Post_Base_URL = "https://a1professionals.net/bybocam/assets/posts/"
 
+let RANDOM_Base_URL = "http://a1professionals.net/bybocam/assets/randomVideo/"
+
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -105,3 +107,7 @@ let LIKED_VIDEO = BASE_URL + "getPostsLikedByMe"
 let DELETE_VIDEO = BASE_URL + "deletePost"
 
 let Post_LIKED_User = BASE_URL + "getPostsLikeUserList"
+
+
+let LOUD_POST_URL = "https://a1professionals.net/bybocam/api/get-RandomVideos"
+

@@ -41,51 +41,58 @@ self.shareVideoBtn.isHidden = true
       
         print("share")
    
-        let videoURL = URL(string:self.shareVideoUrl)
-        let activityItems = [videoURL, "Check this out!" ] as [Any]
-           let activityController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
-
-           activityController.popoverPresentationController?.sourceView = self.view
-           activityController.popoverPresentationController?.sourceRect = self.view.frame
-
-        self.present(activityController, animated: true, completion: nil)
-      
+        
+//        let videoURL = URL(string:self.shareVideoUrl)
+//        let activityItems = [videoURL, "Check this out!" ] as [Any]
+//           let activityController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+//
+//           activityController.popoverPresentationController?.sourceView = self.view
+//           activityController.popoverPresentationController?.sourceRect = self.view.frame
+//
+//        self.present(activityController, animated: true, completion: nil)
+//
     }
     
     @IBAction func chooseVideoAct(_ sender: Any)
     {
+        
+        
+        
+        
            let actionSheet = UIAlertController(title: "Add video !", message: nil, preferredStyle: UIAlertController.Style.alert)
              actionSheet.view.tintColor = UIColor.black
-             
+
              let camera1 =  UIAlertAction(title: "Take Video", style: UIAlertAction.Style.default, handler: { (alert:UIAlertAction!) -> Void in
                  self.openCamera()
              })
              camera1.setValue(0, forKey: "titleTextAlignment")
-             
+
              let camera2 =  UIAlertAction(title: "Choose from Gallery", style: UIAlertAction.Style.default, handler: { (alert:UIAlertAction!) -> Void in
                  self.openGallary()
              })
              camera2.setValue(0, forKey: "titleTextAlignment")
-             
+
              let camera3 =  UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: { (alert:UIAlertAction!) -> Void in
-                 
+
              })
              camera3.setValue(0, forKey: "titleTextAlignment")
-             
+
              // Add the actions
              imagePicker.delegate = self
              imagePicker.isEditing = true
              imagePicker.allowsEditing = true
-             
+
              actionSheet.addAction(camera1)
              actionSheet.addAction(camera2)
              actionSheet.addAction(camera3)
              self.present(actionSheet, animated: true, completion: {() -> Void in
-                 
+
                  actionSheet.view.superview?.isUserInteractionEnabled = true
                  actionSheet.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.alertClose)))
              })
-             
+
+        
+        
     }
 
     
@@ -147,7 +154,14 @@ extension shoutoutLoudVC: UIImagePickerControllerDelegate, UINavigationControlle
                 let cgImage = try imgGenerator.copyCGImage(at: CMTimeMake(value: 0, timescale: 1), actualTime: nil)
                 let thumbnail = UIImage(cgImage: cgImage)
             self.profileVideo.image = thumbnail
-                editProfileApi()
+                
+                let sign = storyboard?.instantiateViewController(withIdentifier: "AddVideoDescVC") as! AddVideoDescVC
+                
+                sign.videoURL = self.videoURL
+                sign.image = thumbnail
+                
+                self.navigationController?.pushViewController(sign, animated: true)
+              
             } catch let error {
                 print("*** Error generating thumbnail: \(error.localizedDescription)")
             }
@@ -209,6 +223,7 @@ extension shoutoutLoudVC: UIImagePickerControllerDelegate, UINavigationControlle
                           if progress.isFinished
                           {
                               // self.ViewProfileAPI()
+                          
                               SVProgressHUD.dismiss()
                           }
                           else{
@@ -265,75 +280,7 @@ extension shoutoutLoudVC: UIImagePickerControllerDelegate, UINavigationControlle
                       break
                   }
           })
-          
-          
-          
-          
-          
-          /*
-           
-           Alamofire.upload(multipartFormData: { MultipartFormData in
-           let timestamp = NSDate().timeIntervalSince1970
-           
-           if self.videoURL != nil
-           {
-           MultipartFormData.append(self.videoURL!, withName: "profile_video" , fileName: "\(timestamp).mov" , mimeType: "\(timestamp)/mov")
-           }
-           
-           let imgData = self.profileImg.image!.jpegData(compressionQuality: 0.2)!
-           
-           
-           MultipartFormData.append(imgData, withName: "profile_image" , fileName: "\(timestamp*10).jpg" , mimeType: "\(timestamp*10)/jpg")
-           
-           
-           print("Para in upload = \(uploadDict)\(self.videoURL)")
-           print("\(self.profileImg.image)")
-           
-           for(key,value) in uploadDict
-           {
-           MultipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
-           }
-           }, to: EDITPROFILEAPI, method: .post)
-           .responseJSON { (response) in
-           debugPrint("SUCCESS RESPONSE: \(response)")
-           
-           let decoder = JSONDecoder()
-           do
-           {
-           if response.data != nil
-           {
-           self.signupData = try decoder.decode(SignupModel.self, from: response.data!)
-           if self.signupData?.code == "200"
-           
-           {
-           self.view.makeToast(self.signupData?.message)
-           
-           }
-           else
-           {
-           if #available(iOS 13.0, *) {
-                     SCENEDEL.loadHomeView()
-           }
-           else
-           {
-           APPDEL.loadHomeView()
-           }
-           }
-           
-           }
-           
-           
-           
-           
-           }
-           catch let error
-           {
-           self.view.makeToast(error.localizedDescription)
-           }
-           }
-           */
-          
-          
+    
       }
 
 }

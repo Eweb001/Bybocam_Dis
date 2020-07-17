@@ -48,6 +48,11 @@
 		5601199923E2D78A00FE2C22 /* BioAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5601199823E2D78A00FE2C22 /* BioAuthViewController.swift */; };
 		5601199C23E2EC7100FE2C22 /* SecurityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5601199A23E2EC7100FE2C22 /* SecurityTableViewCell.swift */; };
 		5601199D23E2EC7100FE2C22 /* SecurityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5601199B23E2EC7100FE2C22 /* SecurityTableViewCell.xib */; };
+		560E88CE24C069350072AC6D /* AddVideoDescVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560E88CD24C069350072AC6D /* AddVideoDescVC.swift */; };
+		560E88D024C07C7B0072AC6D /* PersonalVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560E88CF24C07C7B0072AC6D /* PersonalVideoVC.swift */; };
+		560E88D224C080A20072AC6D /* LoudVideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560E88D124C080A20072AC6D /* LoudVideoModel.swift */; };
+		560E88D524C081270072AC6D /* LoudCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560E88D324C081270072AC6D /* LoudCollectionCell.swift */; };
+		560E88D624C081270072AC6D /* LoudCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 560E88D424C081270072AC6D /* LoudCollectionCell.xib */; };
 		5633C741237168C400091D86 /* Calibri Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5633C740237168BC00091D86 /* Calibri Regular.ttf */; };
 		5633C742237168C400091D86 /* Calibri Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5633C73B237168A800091D86 /* Calibri Bold Italic.ttf */; };
 		5633C743237168C400091D86 /* Calibri Bold.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 5633C73C237168A800091D86 /* Calibri Bold.TTF */; };
@@ -166,6 +171,11 @@
 		5601199823E2D78A00FE2C22 /* BioAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioAuthViewController.swift; sourceTree = "<group>"; };
 		5601199A23E2EC7100FE2C22 /* SecurityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityTableViewCell.swift; sourceTree = "<group>"; };
 		5601199B23E2EC7100FE2C22 /* SecurityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecurityTableViewCell.xib; sourceTree = "<group>"; };
+		560E88CD24C069350072AC6D /* AddVideoDescVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVideoDescVC.swift; sourceTree = "<group>"; };
+		560E88CF24C07C7B0072AC6D /* PersonalVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalVideoVC.swift; sourceTree = "<group>"; };
+		560E88D124C080A20072AC6D /* LoudVideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoudVideoModel.swift; sourceTree = "<group>"; };
+		560E88D324C081270072AC6D /* LoudCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoudCollectionCell.swift; sourceTree = "<group>"; };
+		560E88D424C081270072AC6D /* LoudCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoudCollectionCell.xib; sourceTree = "<group>"; };
 		5633C73B237168A800091D86 /* Calibri Bold Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri Bold Italic.ttf"; sourceTree = "<group>"; };
 		5633C73C237168A800091D86 /* Calibri Bold.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri Bold.TTF"; sourceTree = "<group>"; };
 		5633C73D237168A800091D86 /* Calibri Light Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri Light Italic.ttf"; sourceTree = "<group>"; };
@@ -303,6 +313,7 @@
 				187803F823AA076000CD38BE /* AddSingleMsg.swift */,
 				566729BE23BF7A09004A1B6E /* PostCommentModel.swift */,
 				569CF38E23CC3E610078D348 /* NotificationModel.swift */,
+				560E88D124C080A20072AC6D /* LoudVideoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -389,6 +400,8 @@
 				569DA19B249B3C2200CE4A51 /* BlokedViewController.swift */,
 				56C897EE24AF105600A9E8CE /* PostLikedUserVC.swift */,
 				5699C32424BC78FB009B6815 /* shoutoutLoudVC.swift */,
+				560E88CD24C069350072AC6D /* AddVideoDescVC.swift */,
+				560E88CF24C07C7B0072AC6D /* PersonalVideoVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -436,6 +449,8 @@
 				5601199B23E2EC7100FE2C22 /* SecurityTableViewCell.xib */,
 				569DA19D249B44AC00CE4A51 /* NotificationsettingCell.swift */,
 				569DA19E249B44AC00CE4A51 /* NotificationsettingCell.xib */,
+				560E88D324C081270072AC6D /* LoudCollectionCell.swift */,
+				560E88D424C081270072AC6D /* LoudCollectionCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -548,6 +563,7 @@
 				5633C745237168C400091D86 /* Calibri Light Italic.ttf in Resources */,
 				56800DEE23702C1D00248F68 /* MessageTableViewCell.xib in Resources */,
 				56CB0CB5239E8876008F6DF0 /* FollowerTableViewCell.xib in Resources */,
+				560E88D624C081270072AC6D /* LoudCollectionCell.xib in Resources */,
 				182AF64C237AD37900232E64 /* SettingHeaderCell.xib in Resources */,
 				5601199D23E2EC7100FE2C22 /* SecurityTableViewCell.xib in Resources */,
 				56EF6AF223C313A8009A3DBF /* srtDemo.srt in Resources */,
@@ -630,6 +646,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				560E88D024C07C7B0072AC6D /* PersonalVideoVC.swift in Sources */,
 				182AF648237AC8DB00232E64 /* sendMessgaeViewController.swift in Sources */,
 				5633C7512371862400091D86 /* Profile2ndTableViewCell.swift in Sources */,
 				187803F923AA076000CD38BE /* AddSingleMsg.swift in Sources */,
@@ -672,6 +689,7 @@
 				186DC988237EBA67007CB7A8 /* ForgetViewOne.swift in Sources */,
 				566729BA23BF2CBD004A1B6E /* PostCommentTableViewCell.swift in Sources */,
 				18A10D8223A7548A00292EB8 /* MainChatView.swift in Sources */,
+				560E88D524C081270072AC6D /* LoudCollectionCell.swift in Sources */,
 				56800DD1236FF6F900248F68 /* AppDelegate.swift in Sources */,
 				569CF38F23CC3E610078D348 /* NotificationModel.swift in Sources */,
 				5633C75B23718FC200091D86 /* ProfileGridCollectionViewCell.swift in Sources */,
@@ -680,6 +698,7 @@
 				5656507723C5B0A3001B75C5 /* NotificationViewController.swift in Sources */,
 				569DA19A249B3A6F00CE4A51 /* ViewLikeVideoVC.swift in Sources */,
 				5633C75723718F5800091D86 /* ProfileGridTableViewCell.swift in Sources */,
+				560E88CE24C069350072AC6D /* AddVideoDescVC.swift in Sources */,
 				1868E72C23798A1E00713F48 /* RecomenCollectionViewCell.swift in Sources */,
 				182AF642237AC2CE00232E64 /* SearchViewController.swift in Sources */,
 				182AF64B237AD37900232E64 /* SettingHeaderCell.swift in Sources */,
@@ -699,6 +718,7 @@
 				56800DF223702DCF00248F68 /* CardView.swift in Sources */,
 				566729BD23BF3E8A004A1B6E /* FollowingViewController.swift in Sources */,
 				56D8A9D3239FC8C400B76985 /* AddCommentModel.swift in Sources */,
+				560E88D224C080A20072AC6D /* LoudVideoModel.swift in Sources */,
 				569DA19C249B3C2200CE4A51 /* BlokedViewController.swift in Sources */,
 				566A21A02370692B00FDE713 /* ProfileTableViewCell.swift in Sources */,
 				56C897EF24AF105600A9E8CE /* PostLikedUserVC.swift in Sources */,
