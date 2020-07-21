@@ -307,7 +307,7 @@ class ViewUserProfileVC: UIViewController
     
     @objc func didTap()
     {
-        SlideView.presentFullScreenController(from: self)
+       SlideView.presentFullScreenController(from: self)
         
     }
     

@@ -32,7 +32,8 @@ class LoudCollectionCell: UICollectionViewCell,ASAutoPlayVideoLayerContainer
     var ModelApiResponse:ViewUserProfile?
     var videoLayer: AVPlayerLayer = AVPlayerLayer()
        
-       @IBOutlet weak var buutomView: UIView!
+    @IBOutlet weak var descpLbl: UILabel!
+    @IBOutlet weak var buutomView: UIView!
        
        var videoURL: String? {
            didSet {

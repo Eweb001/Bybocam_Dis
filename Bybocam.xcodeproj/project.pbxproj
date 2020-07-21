@@ -81,6 +81,13 @@
 		5656507723C5B0A3001B75C5 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5656507623C5B0A3001B75C5 /* NotificationViewController.swift */; };
 		565AAB1123962B7600C24C22 /* LoginDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565AAB1023962B7600C24C22 /* LoginDataModel.swift */; };
 		565AAB1323962DF500C24C22 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565AAB1223962DF500C24C22 /* SignUpModel.swift */; };
+		565B549F24C2DAAE006C5870 /* InfluenceProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565B549D24C2DAAE006C5870 /* InfluenceProfileCell.swift */; };
+		565B54A024C2DAAE006C5870 /* InfluenceProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 565B549E24C2DAAE006C5870 /* InfluenceProfileCell.xib */; };
+		565B54A324C2E1AA006C5870 /* AddsCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565B54A124C2E1AA006C5870 /* AddsCCell.swift */; };
+		565B54A424C2E1AA006C5870 /* AddsCCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 565B54A224C2E1AA006C5870 /* AddsCCell.xib */; };
+		565B54A624C2E3BD006C5870 /* InfluencerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565B54A524C2E3BD006C5870 /* InfluencerModel.swift */; };
+		565B54A824C2FD27006C5870 /* AddInfluencerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565B54A724C2FD27006C5870 /* AddInfluencerVC.swift */; };
+		565B54AA24C30CC0006C5870 /* ShowInflucProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565B54A924C30CC0006C5870 /* ShowInflucProfileVC.swift */; };
 		566729B523BF16B9004A1B6E /* FollowerUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566729B423BF16B8004A1B6E /* FollowerUserViewController.swift */; };
 		566729B723BF250F004A1B6E /* PostCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566729B623BF250F004A1B6E /* PostCommentViewController.swift */; };
 		566729BA23BF2CBD004A1B6E /* PostCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566729B823BF2CBD004A1B6E /* PostCommentTableViewCell.swift */; };
@@ -111,6 +118,8 @@
 		569DA19C249B3C2200CE4A51 /* BlokedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569DA19B249B3C2200CE4A51 /* BlokedViewController.swift */; };
 		569DA19F249B44AC00CE4A51 /* NotificationsettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569DA19D249B44AC00CE4A51 /* NotificationsettingCell.swift */; };
 		569DA1A0249B44AC00CE4A51 /* NotificationsettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569DA19E249B44AC00CE4A51 /* NotificationsettingCell.xib */; };
+		56B8CC6F24C6BF6900F811FA /* AllInfluencerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8CC6E24C6BF6900F811FA /* AllInfluencerVC.swift */; };
+		56B8CC7124C6C52E00F811FA /* InfluenceFilterVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8CC7024C6C52E00F811FA /* InfluenceFilterVc.swift */; };
 		56C897EF24AF105600A9E8CE /* PostLikedUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C897EE24AF105600A9E8CE /* PostLikedUserVC.swift */; };
 		56CB0CB1239E8819008F6DF0 /* FolloweViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB0CB0239E8819008F6DF0 /* FolloweViewController.swift */; };
 		56CB0CB4239E8876008F6DF0 /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB0CB2239E8876008F6DF0 /* FollowerTableViewCell.swift */; };
@@ -205,6 +214,13 @@
 		5656507623C5B0A3001B75C5 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		565AAB1023962B7600C24C22 /* LoginDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataModel.swift; sourceTree = "<group>"; };
 		565AAB1223962DF500C24C22 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
+		565B549D24C2DAAE006C5870 /* InfluenceProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfluenceProfileCell.swift; sourceTree = "<group>"; };
+		565B549E24C2DAAE006C5870 /* InfluenceProfileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfluenceProfileCell.xib; sourceTree = "<group>"; };
+		565B54A124C2E1AA006C5870 /* AddsCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddsCCell.swift; sourceTree = "<group>"; };
+		565B54A224C2E1AA006C5870 /* AddsCCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddsCCell.xib; sourceTree = "<group>"; };
+		565B54A524C2E3BD006C5870 /* InfluencerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfluencerModel.swift; sourceTree = "<group>"; };
+		565B54A724C2FD27006C5870 /* AddInfluencerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInfluencerVC.swift; sourceTree = "<group>"; };
+		565B54A924C30CC0006C5870 /* ShowInflucProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowInflucProfileVC.swift; sourceTree = "<group>"; };
 		566729B423BF16B8004A1B6E /* FollowerUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerUserViewController.swift; sourceTree = "<group>"; };
 		566729B623BF250F004A1B6E /* PostCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCommentViewController.swift; sourceTree = "<group>"; };
 		566729B823BF2CBD004A1B6E /* PostCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCommentTableViewCell.swift; sourceTree = "<group>"; };
@@ -237,6 +253,8 @@
 		569DA19B249B3C2200CE4A51 /* BlokedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlokedViewController.swift; sourceTree = "<group>"; };
 		569DA19D249B44AC00CE4A51 /* NotificationsettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsettingCell.swift; sourceTree = "<group>"; };
 		569DA19E249B44AC00CE4A51 /* NotificationsettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationsettingCell.xib; sourceTree = "<group>"; };
+		56B8CC6E24C6BF6900F811FA /* AllInfluencerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllInfluencerVC.swift; sourceTree = "<group>"; };
+		56B8CC7024C6C52E00F811FA /* InfluenceFilterVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfluenceFilterVc.swift; sourceTree = "<group>"; };
 		56C897EE24AF105600A9E8CE /* PostLikedUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLikedUserVC.swift; sourceTree = "<group>"; };
 		56CB0CB0239E8819008F6DF0 /* FolloweViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolloweViewController.swift; sourceTree = "<group>"; };
 		56CB0CB2239E8876008F6DF0 /* FollowerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerTableViewCell.swift; sourceTree = "<group>"; };
@@ -314,6 +332,7 @@
 				566729BE23BF7A09004A1B6E /* PostCommentModel.swift */,
 				569CF38E23CC3E610078D348 /* NotificationModel.swift */,
 				560E88D124C080A20072AC6D /* LoudVideoModel.swift */,
+				565B54A524C2E3BD006C5870 /* InfluencerModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -402,6 +421,10 @@
 				5699C32424BC78FB009B6815 /* shoutoutLoudVC.swift */,
 				560E88CD24C069350072AC6D /* AddVideoDescVC.swift */,
 				560E88CF24C07C7B0072AC6D /* PersonalVideoVC.swift */,
+				565B54A724C2FD27006C5870 /* AddInfluencerVC.swift */,
+				565B54A924C30CC0006C5870 /* ShowInflucProfileVC.swift */,
+				56B8CC6E24C6BF6900F811FA /* AllInfluencerVC.swift */,
+				56B8CC7024C6C52E00F811FA /* InfluenceFilterVc.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -451,6 +474,10 @@
 				569DA19E249B44AC00CE4A51 /* NotificationsettingCell.xib */,
 				560E88D324C081270072AC6D /* LoudCollectionCell.swift */,
 				560E88D424C081270072AC6D /* LoudCollectionCell.xib */,
+				565B549D24C2DAAE006C5870 /* InfluenceProfileCell.swift */,
+				565B549E24C2DAAE006C5870 /* InfluenceProfileCell.xib */,
+				565B54A124C2E1AA006C5870 /* AddsCCell.swift */,
+				565B54A224C2E1AA006C5870 /* AddsCCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -557,10 +584,12 @@
 				5633C741237168C400091D86 /* Calibri Regular.ttf in Resources */,
 				5633C75823718F5800091D86 /* ProfileGridTableViewCell.xib in Resources */,
 				18187F2023A2611800B506A8 /* ChatListTableViewCell.xib in Resources */,
+				565B54A424C2E1AA006C5870 /* AddsCCell.xib in Resources */,
 				18BD0D43237E71E400A653CB /* NotificationTableCell.xib in Resources */,
 				182AF646237AC3AC00232E64 /* SearchCollectionCell.xib in Resources */,
 				5633C7522371862400091D86 /* Profile2ndTableViewCell.xib in Resources */,
 				5633C745237168C400091D86 /* Calibri Light Italic.ttf in Resources */,
+				565B54A024C2DAAE006C5870 /* InfluenceProfileCell.xib in Resources */,
 				56800DEE23702C1D00248F68 /* MessageTableViewCell.xib in Resources */,
 				56CB0CB5239E8876008F6DF0 /* FollowerTableViewCell.xib in Resources */,
 				560E88D624C081270072AC6D /* LoudCollectionCell.xib in Resources */,
@@ -665,6 +694,7 @@
 				5633C754237186B800091D86 /* NewProfileViewController.swift in Sources */,
 				18A10D8423A76FDA00292EB8 /* DemoChatView.swift in Sources */,
 				56800DD3236FF6F900248F68 /* ViewController.swift in Sources */,
+				56B8CC6F24C6BF6900F811FA /* AllInfluencerVC.swift in Sources */,
 				18B45A542382B3B9004F1ED7 /* Apihandler.swift in Sources */,
 				1868E7272379718B00713F48 /* ReccomendationView.swift in Sources */,
 				183828C02383C36C007A13D1 /* ProfileEditingViewController.swift in Sources */,
@@ -686,6 +716,7 @@
 				565AAB1123962B7600C24C22 /* LoginDataModel.swift in Sources */,
 				56EF6AF723C3260D009A3DBF /* ASVideoPlayerController.swift in Sources */,
 				56800DE62370123400248F68 /* SignupViewController.swift in Sources */,
+				565B54AA24C30CC0006C5870 /* ShowInflucProfileVC.swift in Sources */,
 				186DC988237EBA67007CB7A8 /* ForgetViewOne.swift in Sources */,
 				566729BA23BF2CBD004A1B6E /* PostCommentTableViewCell.swift in Sources */,
 				18A10D8223A7548A00292EB8 /* MainChatView.swift in Sources */,
@@ -696,6 +727,7 @@
 				56EF6AFB23C32FF9009A3DBF /* AppImageView.swift in Sources */,
 				5634F9802387C49200A63BB6 /* AddVideoModel.swift in Sources */,
 				5656507723C5B0A3001B75C5 /* NotificationViewController.swift in Sources */,
+				565B549F24C2DAAE006C5870 /* InfluenceProfileCell.swift in Sources */,
 				569DA19A249B3A6F00CE4A51 /* ViewLikeVideoVC.swift in Sources */,
 				5633C75723718F5800091D86 /* ProfileGridTableViewCell.swift in Sources */,
 				560E88CE24C069350072AC6D /* AddVideoDescVC.swift in Sources */,
@@ -704,6 +736,7 @@
 				182AF64B237AD37900232E64 /* SettingHeaderCell.swift in Sources */,
 				56EF6AF823C3260D009A3DBF /* ASVideoContainer.swift in Sources */,
 				18699BA62390EEAA00877FED /* reportAproblem.swift in Sources */,
+				565B54A324C2E1AA006C5870 /* AddsCCell.swift in Sources */,
 				182B0C94238B9AEC00BE1B4B /* ReccomendationModel.swift in Sources */,
 				56800DE92370261800248F68 /* HomeTabViewController.swift in Sources */,
 				56D8A9D1239FBC3E00B76985 /* GroupChatMsgModel.swift in Sources */,
@@ -722,12 +755,15 @@
 				569DA19C249B3C2200CE4A51 /* BlokedViewController.swift in Sources */,
 				566A21A02370692B00FDE713 /* ProfileTableViewCell.swift in Sources */,
 				56C897EF24AF105600A9E8CE /* PostLikedUserVC.swift in Sources */,
+				565B54A624C2E3BD006C5870 /* InfluencerModel.swift in Sources */,
 				56800DF023702C3800248F68 /* MessageViewController.swift in Sources */,
 				56EF6AF923C3260D009A3DBF /* ASVideoLayerObject.swift in Sources */,
 				5601199C23E2EC7100FE2C22 /* SecurityTableViewCell.swift in Sources */,
 				566A219B2370573700FDE713 /* GradientColor.swift in Sources */,
 				18BD0D47237E8DCB00A653CB /* TermAndUseView.swift in Sources */,
 				566729B723BF250F004A1B6E /* PostCommentViewController.swift in Sources */,
+				565B54A824C2FD27006C5870 /* AddInfluencerVC.swift in Sources */,
+				56B8CC7124C6C52E00F811FA /* InfluenceFilterVc.swift in Sources */,
 				565AAB1323962DF500C24C22 /* SignUpModel.swift in Sources */,
 				566729BF23BF7A09004A1B6E /* PostCommentModel.swift in Sources */,
 				186DC98A237EBA78007CB7A8 /* ForgetViewTwo.swift in Sources */,
@@ -882,7 +918,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 01C894BF906403CCA483F83A /* Pods-Bybocam.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-3";
 				CODE_SIGN_ENTITLEMENTS = Bybocam/Bybocam.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Amarinder Gurna (CXXR6BK656)";
 				CODE_SIGN_STYLE = Manual;
@@ -906,7 +942,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7E37133B7CCCC4E37397CA26 /* Pods-Bybocam.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-3";
 				CODE_SIGN_ENTITLEMENTS = Bybocam/Bybocam.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Amarinder Gurna (CXXR6BK656)";
 				CODE_SIGN_STYLE = Manual;

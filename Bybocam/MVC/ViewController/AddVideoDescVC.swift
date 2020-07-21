@@ -10,7 +10,7 @@ import UIKit
 import SVProgressHUD
 import Alamofire
 
-class AddVideoDescVC: UIViewController
+class AddVideoDescVC: UIViewController,UITextViewDelegate
     
 {
     @IBOutlet weak var myPopUpTable: UITableView!
@@ -44,6 +44,7 @@ class AddVideoDescVC: UIViewController
         // Do any additional setup after loading the view.
         
         self.thumbImg.image = image
+        descTxt.delegate=self
         
         if !NetworkEngine.networkEngineObj.isInternetAvailable()
         {
@@ -61,7 +62,23 @@ class AddVideoDescVC: UIViewController
     {
         self.navigationController?.popViewController(animated: true)
     }
+
+   func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool
+   {
+        let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
+        let numberOfChars = newText.count
     
+    if numberOfChars < 50
+    {
+        return true
+    }
+    else
+    {
+           NetworkEngine.commonAlert(message: "Discription will maximum 50 characters.", vc: self)
+         return false
+    }
+  
+    }
 }
 extension AddVideoDescVC:UITableViewDataSource, UITableViewDelegate
 {

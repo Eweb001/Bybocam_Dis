@@ -26,8 +26,8 @@ class SignupViewController: UIViewController, CLLocationManagerDelegate {
     // Location Manager
     
     var locationManager:CLLocationManager!
-    var newLat = ""
-    var newLong = ""
+    var newLat = "30.998"
+    var newLong = "769089"
     var CurrentMainLocatin = ""
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])

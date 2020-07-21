@@ -32,6 +32,11 @@ let Post_Base_URL = "https://a1professionals.net/bybocam/assets/posts/"
 
 let RANDOM_Base_URL = "http://a1professionals.net/bybocam/assets/randomVideo/"
 
+let INFLUENCER_IMAGE_URL = "http://a1professionals.net/bybocam/assets/picture/"
+
+
+
+
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -108,6 +113,11 @@ let DELETE_VIDEO = BASE_URL + "deletePost"
 
 let Post_LIKED_User = BASE_URL + "getPostsLikeUserList"
 
+let EDIT_PROFILE_User = BASE_URL + "editProfile"
 
 let LOUD_POST_URL = "https://a1professionals.net/bybocam/api/get-RandomVideos"
 
+let INFLUENCER_PROFILE_User = "https://a1professionals.net/bybocam/api/get-InfulencesData"
+
+
+let ADD_INFPROFILE_User =  "https://a1professionals.net/bybocam/api/add-Influences"

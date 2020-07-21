@@ -8,7 +8,7 @@ target 'Bybocam' do
   # Pods for Bybocam
   
   pod 'AccountKit'
-pod 'ImageSlideshow'
+pod 'ImageSlideshow', '~> 1.8.1'
 pod 'ImageSlideshow/Alamofire'
 pod 'IQKeyboardManager’
 pod 'SDWebImage'
@@ -21,4 +21,7 @@ pod 'JSQMessagesViewController'
 pod 'MMPlayerView'
 pod 'CountryList'
 pod 'BiometricAuthentication' , '~> 2.2'
+pod 'DropDown', '~> 2.3.4'
+pod 'iOSDropDown'
 end
+

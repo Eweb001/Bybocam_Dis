@@ -53,10 +53,19 @@ self.shareVideoBtn.isHidden = true
 //
     }
     
+    @IBAction func influAct(_ sender: Any)
+       {
+         let sign = storyboard?.instantiateViewController(withIdentifier: "AddInfluencerVC") as! AddInfluencerVC
+        
+         
+         self.navigationController?.pushViewController(sign, animated: true)
+    }
+    
+    
     @IBAction func chooseVideoAct(_ sender: Any)
     {
         
-        
+
         
         
            let actionSheet = UIAlertController(title: "Add video !", message: nil, preferredStyle: UIAlertController.Style.alert)

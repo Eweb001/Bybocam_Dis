@@ -5,12 +5,14 @@ PODS:
     - Alamofire (~> 4.8)
   - BiometricAuthentication (2.2.1)
   - CountryList (1.1)
-  - ImageSlideshow (1.8.0):
-    - ImageSlideshow/Core (= 1.8.0)
-  - ImageSlideshow/Alamofire (1.8.0):
+  - DropDown (2.3.13)
+  - ImageSlideshow (1.8.3):
+    - ImageSlideshow/Core (= 1.8.3)
+  - ImageSlideshow/Alamofire (1.8.3):
     - AlamofireImage (~> 3.0)
     - ImageSlideshow/Core
-  - ImageSlideshow/Core (1.8.0)
+  - ImageSlideshow/Core (1.8.3)
+  - iOSDropDown (0.3.4)
   - iOSPhotoEditor (0.6)
   - IQKeyboardManager (6.4.0)
   - JSQMessagesViewController (7.3.5):
@@ -33,8 +35,10 @@ DEPENDENCIES:
   - Alamofire
   - BiometricAuthentication (~> 2.2)
   - CountryList
-  - ImageSlideshow
+  - DropDown (~> 2.3.4)
+  - ImageSlideshow (~> 1.8.1)
   - ImageSlideshow/Alamofire
+  - iOSDropDown
   - iOSPhotoEditor
   - IQKeyboardManager
   - JSQMessagesViewController
@@ -45,13 +49,15 @@ DEPENDENCIES:
   - YPImagePicker
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - AccountKit
     - Alamofire
     - AlamofireImage
     - BiometricAuthentication
     - CountryList
+    - DropDown
     - ImageSlideshow
+    - iOSDropDown
     - iOSPhotoEditor
     - IQKeyboardManager
     - JSQMessagesViewController
@@ -70,7 +76,9 @@ SPEC CHECKSUMS:
   AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
   BiometricAuthentication: 5e3dc3804fb5c6bd69ae558e567e527d7e043a38
   CountryList: ad58cd670c4ecab6bb014abebc12e63f619174b2
-  ImageSlideshow: 197130fe349aafa9446f54277c792551d41eadf9
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  ImageSlideshow: 4694d7d699a1549582e7cc631fb392d8f91630f3
+  iOSDropDown: c10a761f9a00c3f1cc9d3bce43ae504628e2f692
   iOSPhotoEditor: d597c2797033bb06e2a705560ae748136c8ac2ea
   IQKeyboardManager: fcef267266379c003181fc3592f6bdb8bf4db839
   JSQMessagesViewController: 6587f56aedbcb150a8ba1d968e1ef58b1bc758b7
@@ -83,6 +91,6 @@ SPEC CHECKSUMS:
   Toast-Swift: 36f4720243c8582c2be243a60a51e193c761f541
   YPImagePicker: 8039f89ad79281545fa868486f32d9bf5d65ede1
 
-PODFILE CHECKSUM: 8af634a37cec2ce2b9e403c4da9ffc2dfbeca126
+PODFILE CHECKSUM: 760c1a626d6fe487adc5f19cef91aca4993ec045
 
-COCOAPODS: 1.7.4
+COCOAPODS: 1.9.3

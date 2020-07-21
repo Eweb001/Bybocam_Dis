@@ -359,42 +359,54 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
                     multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
                 }
                 
-        }, to:"http://srv1.a1professionals.net/bybocam/api/user/editProfile")
+        }, to:EDIT_PROFILE_User)
         { (result) in
             switch result {
             case .success(let upload, _, _):
                 
                 upload.uploadProgress(closure: { (progress) in
+                    
+                    if progress.isFinished
+                    {
+                        SVProgressHUD.dismiss()
+                       
+                    }
+                    else{
+                        ApiHandler.LOADERSHOW()
+                    }
                 })
                 upload.responseJSON
                     {
                         response in
                         print(response)
                         
-                        
+                          self.navigationController?.popViewController(animated: true)
                         if response.data != nil
                         {
                             do
                             {
-                                ApiHandler.LOADERSHOW()
+                                
                                 
                                 let decoder = JSONDecoder()
                                 
-                                self.apiResponse = try decoder.decode(AddVideoModel.self, from: response.data!)
+                             
+                               
                                 
-                                if self.apiResponse?.code == "201"
-                                {
-                                    
-                                    let alert = UIAlertController(title: "Notification", message: "Successfully Updated", preferredStyle: UIAlertController.Style.alert)
-                                  
-                                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
-                                         self.navigationController?.popViewController(animated: true)
-                                        print("Handle Cancel Logic here")
-                                    }))
-                                   self.present(alert, animated: true, completion: nil)
-                                    
-                                }
-                                SVProgressHUD.dismiss()
+                            //    self.apiResponse = try decoder.decode(AddVideoModel.self, from: response.data!)
+                                
+//                                if self.apiResponse?.code == "201"
+//                                {
+//
+//                                    let alert = UIAlertController(title: "Notification", message: "Successfully Updated", preferredStyle: UIAlertController.Style.alert)
+//
+//                                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
+//                                         self.navigationController?.popViewController(animated: true)
+//                                        print("Handle Cancel Logic here")
+//                                    }))
+//                                   self.present(alert, animated: true, completion: nil)
+//
+//                                }
+//                                SVProgressHUD.dismiss()
                             }
                             catch let error
                             {

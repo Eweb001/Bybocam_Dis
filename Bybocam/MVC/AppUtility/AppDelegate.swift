@@ -10,7 +10,7 @@ import UIKit
 import UserNotifications
 import UserNotificationsUI
 import BiometricAuthentication
-
+import DropDown
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDelegate
 {
@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         let attributes = [NSAttributedString.Key.font: UIFont(name: "Calibri-Bold", size: 17)!]
         UINavigationBar.appearance().titleTextAttributes = attributes
         Autologin()
+        DropDown.startListeningToKeyboard()
+
         UIApplication.shared.windows.forEach { window in
             if #available(iOS 13.0, *) {
                 window.overrideUserInterfaceStyle = .light
