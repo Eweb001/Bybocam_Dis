@@ -11,6 +11,10 @@ import UserNotifications
 import UserNotificationsUI
 import BiometricAuthentication
 import DropDown
+import AppCenter
+import AppCenterAnalytics
+import AppCenterCrashes
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDelegate
 {
@@ -24,7 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         UINavigationBar.appearance().titleTextAttributes = attributes
         Autologin()
         DropDown.startListeningToKeyboard()
-
+        MSAppCenter.start("119cc9ff-6a7f-4f01-9b48-69dfe787bd81", withServices:[
+          MSAnalytics.self,
+          MSCrashes.self
+        ])
         UIApplication.shared.windows.forEach { window in
             if #available(iOS 13.0, *) {
                 window.overrideUserInterfaceStyle = .light

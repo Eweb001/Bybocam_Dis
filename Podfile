@@ -23,5 +23,6 @@ pod 'CountryList'
 pod 'BiometricAuthentication' , '~> 2.2'
 pod 'DropDown', '~> 2.3.4'
 pod 'iOSDropDown'
+pod 'AppCenter'
 end
 
