@@ -43,6 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         BioMetricAuthenticator.shared.allowableReuseDuration = 60
          registerForRemoteNotification()
         
+            //amarendra comment
         
         
         return true
