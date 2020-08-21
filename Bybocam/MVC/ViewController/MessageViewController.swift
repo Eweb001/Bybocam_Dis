@@ -71,7 +71,8 @@ class MessageViewController: UIViewController,UITableViewDelegate,UITableViewDat
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+               
+
            self.messageTable.addSubview(refreshControl)
         if !NetworkEngine.networkEngineObj.isInternetAvailable()
         {
@@ -90,6 +91,7 @@ class MessageViewController: UIViewController,UITableViewDelegate,UITableViewDat
         sideRoundBtn.layer.masksToBounds = false
         sideRoundBtn.layer.shadowRadius = 2.0
         sideRoundBtn.layer.shadowOpacity = 0.5
+         self.sideRoundBtn.applyGradient(colours: [COLOR1, COLOR2, COLOR3], locations: [0.0, 0.5, 1.0])
         messageTable.delegate = self
         messageTable.dataSource = self
         messageTable.register(UINib(nibName: "MessageTableViewCell", bundle: nil), forCellReuseIdentifier: "MessageTableViewCell")

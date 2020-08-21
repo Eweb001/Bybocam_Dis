@@ -14,6 +14,7 @@ import DropDown
 import AppCenter
 import AppCenterAnalytics
 import AppCenterCrashes
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDelegate
@@ -27,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         let attributes = [NSAttributedString.Key.font: UIFont(name: "Calibri-Bold", size: 17)!]
         UINavigationBar.appearance().titleTextAttributes = attributes
         Autologin()
+        FirebaseApp.configure()
         DropDown.startListeningToKeyboard()
         MSAppCenter.start("119cc9ff-6a7f-4f01-9b48-69dfe787bd81", withServices:[
           MSAnalytics.self,

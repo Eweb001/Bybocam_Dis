@@ -1,5 +1,4 @@
 PODS:
-  - AccountKit (5.4.0)
   - Alamofire (4.8.2)
   - AlamofireImage (3.5.2):
     - Alamofire (~> 4.8)
@@ -12,8 +11,48 @@ PODS:
   - AppCenter/Crashes (3.3.1):
     - AppCenter/Core
   - BiometricAuthentication (2.2.1)
+  - CLImageViewPopup (0.1.1)
   - CountryList (1.1)
   - DropDown (2.3.13)
+  - Firebase/Auth (6.27.0):
+    - Firebase/CoreOnly
+    - FirebaseAuth (~> 6.6.0)
+  - Firebase/CoreOnly (6.27.0):
+    - FirebaseCore (= 6.8.0)
+  - FirebaseAuth (6.6.0):
+    - FirebaseCore (~> 6.8)
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.5)
+    - GoogleUtilities/Environment (~> 6.5)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - FirebaseCore (6.8.0):
+    - FirebaseCoreDiagnostics (~> 1.3)
+    - GoogleUtilities/Environment (~> 6.5)
+    - GoogleUtilities/Logger (~> 6.5)
+  - FirebaseCoreDiagnostics (1.4.0):
+    - GoogleDataTransportCCTSupport (~> 3.1)
+    - GoogleUtilities/Environment (~> 6.5)
+    - GoogleUtilities/Logger (~> 6.5)
+    - nanopb (~> 1.30905.0)
+  - GoogleDataTransport (6.2.1)
+  - GoogleDataTransportCCTSupport (3.2.0):
+    - GoogleDataTransport (~> 6.1)
+    - nanopb (~> 1.30905.0)
+  - GoogleUtilities/AppDelegateSwizzler (6.6.0):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (6.6.0):
+    - PromisesObjC (~> 1.2)
+  - GoogleUtilities/Logger (6.6.0):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/Network (6.6.0):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (6.6.0)"
+  - GoogleUtilities/Reachability (6.6.0):
+    - GoogleUtilities/Logger
+  - GTMSessionFetcher/Core (1.4.0)
   - ImageSlideshow (1.8.3):
     - ImageSlideshow/Core (= 1.8.3)
   - ImageSlideshow/Alamofire (1.8.3):
@@ -27,6 +66,12 @@ PODS:
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
   - MMPlayerView (5.4.0)
+  - nanopb (1.30905.0):
+    - nanopb/decode (= 1.30905.0)
+    - nanopb/encode (= 1.30905.0)
+  - nanopb/decode (1.30905.0)
+  - nanopb/encode (1.30905.0)
+  - PromisesObjC (1.2.9)
   - PryntTrimmerView (3.0.0)
   - SDWebImage (5.0.6):
     - SDWebImage/Core (= 5.0.6)
@@ -39,12 +84,13 @@ PODS:
     - SteviaLayout (~> 4.4.1)
 
 DEPENDENCIES:
-  - AccountKit
   - Alamofire
   - AppCenter
   - BiometricAuthentication (~> 2.2)
+  - CLImageViewPopup
   - CountryList
   - DropDown (~> 2.3.4)
+  - Firebase/Auth
   - ImageSlideshow (~> 1.8.1)
   - ImageSlideshow/Alamofire
   - iOSDropDown
@@ -59,13 +105,21 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - AccountKit
     - Alamofire
     - AlamofireImage
     - AppCenter
     - BiometricAuthentication
+    - CLImageViewPopup
     - CountryList
     - DropDown
+    - Firebase
+    - FirebaseAuth
+    - FirebaseCore
+    - FirebaseCoreDiagnostics
+    - GoogleDataTransport
+    - GoogleDataTransportCCTSupport
+    - GoogleUtilities
+    - GTMSessionFetcher
     - ImageSlideshow
     - iOSDropDown
     - iOSPhotoEditor
@@ -73,6 +127,8 @@ SPEC REPOS:
     - JSQMessagesViewController
     - JSQSystemSoundPlayer
     - MMPlayerView
+    - nanopb
+    - PromisesObjC
     - PryntTrimmerView
     - SDWebImage
     - SteviaLayout
@@ -81,13 +137,21 @@ SPEC REPOS:
     - YPImagePicker
 
 SPEC CHECKSUMS:
-  AccountKit: ab476b54fd1255bc24ca96060692af0e1019e777
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
   AppCenter: 76ecf7e959a68e36b0fd314e8dc5897660214423
   BiometricAuthentication: 5e3dc3804fb5c6bd69ae558e567e527d7e043a38
+  CLImageViewPopup: 66e459b179084dbcc8cf56749c27078b73640af6
   CountryList: ad58cd670c4ecab6bb014abebc12e63f619174b2
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  Firebase: fc4cbf6f1592636431821ef9a3c557e4dfd9f268
+  FirebaseAuth: b85c064e0ac60f82486728d50a4803f235687302
+  FirebaseCore: feda061cb1ee6d8ad4824f4a4a8ffbcfe284f595
+  FirebaseCoreDiagnostics: 4505e4d4009b1d93f605088ee7d7764d5f0d1c84
+  GoogleDataTransport: 9a8a16f79feffc7f42096743de2a7c4815e84020
+  GoogleDataTransportCCTSupport: 489c1265d2c85b68187a83a911913d190012158d
+  GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
+  GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
   ImageSlideshow: 4694d7d699a1549582e7cc631fb392d8f91630f3
   iOSDropDown: c10a761f9a00c3f1cc9d3bce43ae504628e2f692
   iOSPhotoEditor: d597c2797033bb06e2a705560ae748136c8ac2ea
@@ -95,6 +159,8 @@ SPEC CHECKSUMS:
   JSQMessagesViewController: 6587f56aedbcb150a8ba1d968e1ef58b1bc758b7
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   MMPlayerView: 2879e6439f0060d078c99898f39a87ff8bae6ca4
+  nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
+  PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
   PryntTrimmerView: 53ac64053c7ce63cb3e27f54090f52da0734891d
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
   SteviaLayout: 523469269059f2c6da02820bb2ff28a5fe0780aa
@@ -102,6 +168,6 @@ SPEC CHECKSUMS:
   Toast-Swift: 36f4720243c8582c2be243a60a51e193c761f541
   YPImagePicker: 8039f89ad79281545fa868486f32d9bf5d65ede1
 
-PODFILE CHECKSUM: ac1b34015826e631dcc410790b186c2f88262a53
+PODFILE CHECKSUM: be6e72a2aa52e1fd8c06aa25c251f3c345c5c9e9
 
 COCOAPODS: 1.9.3

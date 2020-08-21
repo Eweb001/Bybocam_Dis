@@ -288,6 +288,43 @@ class NetworkEngine:UIViewController{
         }
         
     }
-    
+     static func showToast(controller: UIViewController?, message : String?, seconds: Double?)
+      {
+            let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+            alert.view.backgroundColor = UIColor.black
+            alert.view.alpha = 0.1
+            alert.view.layer.cornerRadius = 15
+        //alert.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = APPCOLOL
+
+           // Accessing buttons tintcolor :
+           alert.view.tintColor = UIColor.white
+        
+            //controller.present(alert, animated: true)
+        if (controller == nil)
+               {
+                   if let app = UIApplication.shared.delegate as? AppDelegate, let window = app.window {
+                       window.rootViewController?.present(alert, animated: true, completion: nil)
+                   }
+               }
+               else
+               {
+                
+                 controller?.present(alert, animated: true) {
+    //                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissAlertController(controller: controller)))
+    //                controller?.view.superview?.subviews[0].addGestureRecognizer(tapGesture)
+                }
+               }
+        
+        
+
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + (seconds ?? 1.5)) {
+                alert.dismiss(animated: true)
+            }
+        }
+        
+        @objc func dismissAlertController(controller: UIViewController?)
+        {
+            controller?.dismiss(animated: true, completion: nil)
+        }
     
 }

@@ -118,6 +118,8 @@
 		569DA19C249B3C2200CE4A51 /* BlokedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569DA19B249B3C2200CE4A51 /* BlokedViewController.swift */; };
 		569DA19F249B44AC00CE4A51 /* NotificationsettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569DA19D249B44AC00CE4A51 /* NotificationsettingCell.swift */; };
 		569DA1A0249B44AC00CE4A51 /* NotificationsettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569DA19E249B44AC00CE4A51 /* NotificationsettingCell.xib */; };
+		56B7106124D7FA6E00882C0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56B7106024D7FA6E00882C0F /* GoogleService-Info.plist */; };
+		56B7106324D7FC1600882C0F /* OTPVerificationVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B7106224D7FC1600882C0F /* OTPVerificationVc.swift */; };
 		56B8CC6F24C6BF6900F811FA /* AllInfluencerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8CC6E24C6BF6900F811FA /* AllInfluencerVC.swift */; };
 		56B8CC7124C6C52E00F811FA /* InfluenceFilterVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8CC7024C6C52E00F811FA /* InfluenceFilterVc.swift */; };
 		56C897EF24AF105600A9E8CE /* PostLikedUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C897EE24AF105600A9E8CE /* PostLikedUserVC.swift */; };
@@ -253,6 +255,8 @@
 		569DA19B249B3C2200CE4A51 /* BlokedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlokedViewController.swift; sourceTree = "<group>"; };
 		569DA19D249B44AC00CE4A51 /* NotificationsettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsettingCell.swift; sourceTree = "<group>"; };
 		569DA19E249B44AC00CE4A51 /* NotificationsettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationsettingCell.xib; sourceTree = "<group>"; };
+		56B7106024D7FA6E00882C0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		56B7106224D7FC1600882C0F /* OTPVerificationVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPVerificationVc.swift; sourceTree = "<group>"; };
 		56B8CC6E24C6BF6900F811FA /* AllInfluencerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllInfluencerVC.swift; sourceTree = "<group>"; };
 		56B8CC7024C6C52E00F811FA /* InfluenceFilterVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfluenceFilterVc.swift; sourceTree = "<group>"; };
 		56C897EE24AF105600A9E8CE /* PostLikedUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLikedUserVC.swift; sourceTree = "<group>"; };
@@ -358,6 +362,7 @@
 		56800DCF236FF6F900248F68 /* Bybocam */ = {
 			isa = PBXGroup;
 			children = (
+				56B7106024D7FA6E00882C0F /* GoogleService-Info.plist */,
 				56EF6AF323C325D3009A3DBF /* VideoLibrary */,
 				5634FE2723B480910063B00C /* Bybocam.entitlements */,
 				5633C73A2371687800091D86 /* AppFont */,
@@ -425,6 +430,7 @@
 				565B54A924C30CC0006C5870 /* ShowInflucProfileVC.swift */,
 				56B8CC6E24C6BF6900F811FA /* AllInfluencerVC.swift */,
 				56B8CC7024C6C52E00F811FA /* InfluenceFilterVc.swift */,
+				56B7106224D7FC1600882C0F /* OTPVerificationVc.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -521,7 +527,6 @@
 				56800DCA236FF6F900248F68 /* Frameworks */,
 				56800DCB236FF6F900248F68 /* Resources */,
 				465075BD47BAFE073A9CD0D1 /* [CP] Embed Pods Frameworks */,
-				C75C0193D8B064FD25F31424 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -600,6 +605,7 @@
 				566729BB23BF2CBD004A1B6E /* PostCommentTableViewCell.xib in Resources */,
 				5633C744237168C400091D86 /* Calibri Italic.ttf in Resources */,
 				5633C743237168C400091D86 /* Calibri Bold.TTF in Resources */,
+				56B7106124D7FA6E00882C0F /* GoogleService-Info.plist in Resources */,
 				56800DD8236FF6FB00248F68 /* Assets.xcassets in Resources */,
 				5633C742237168C400091D86 /* Calibri Bold Italic.ttf in Resources */,
 				56EF6AEF23C30E35009A3DBF /* CoverA.xib in Resources */,
@@ -627,23 +633,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bybocam/Pods-Bybocam-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C75C0193D8B064FD25F31424 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Bybocam/Pods-Bybocam-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Bybocam/Pods-Bybocam-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bybocam/Pods-Bybocam-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DC0BB7E29BF6DF24FA14FA7B /* [CP] Check Pods Manifest.lock */ = {
@@ -740,6 +729,7 @@
 				182B0C94238B9AEC00BE1B4B /* ReccomendationModel.swift in Sources */,
 				56800DE92370261800248F68 /* HomeTabViewController.swift in Sources */,
 				56D8A9D1239FBC3E00B76985 /* GroupChatMsgModel.swift in Sources */,
+				56B7106324D7FC1600882C0F /* OTPVerificationVc.swift in Sources */,
 				566A219D2370688C00FDE713 /* ProfileViewController.swift in Sources */,
 				5699C32524BC78FB009B6815 /* shoutoutLoudVC.swift in Sources */,
 				56800DED23702C1D00248F68 /* MessageTableViewCell.swift in Sources */,

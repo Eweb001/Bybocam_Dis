@@ -11,14 +11,15 @@ import UIKit
 import Photos
 import Alamofire
 import SDWebImage
-import AccountKit
+
 import CoreLocation
 import SVProgressHUD
 import CountryList
 
-class EditProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate,AKFViewControllerDelegate
+
+class EditProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate
 {
-    var accountkit: AccountKitManager!
+  
     var apiResponse:AddVideoModel?
     var ModelApiResponse:ViewUserProfile?
     var countryList = CountryList()
@@ -42,6 +43,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     var usrName  = "yes"
     @IBOutlet weak var countryCode: UIButton!
+    var phoneChanges=false
     
     override func viewDidLoad()
     {
@@ -50,7 +52,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
         countryList.delegate = self
         userNameTF.delegate = self
-        
+        PhoneTf.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+
        
        
         
@@ -63,14 +66,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         sendBtnOutlet.layer.shadowOpacity = 0.5
         
         
-        if accountkit == nil
-        {
-            self.accountkit = AccountKitManager(responseType: .accessToken)
-           
-            print("self.accountkit \(self.accountkit)")
-        }
-        
-        print("access token = \(accountkit.currentAccessToken)")
+    
         if !NetworkEngine.networkEngineObj.isInternetAvailable()
         {
             
@@ -89,9 +85,28 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-       
+        
+        if let PHONECODE = DEFAULT.value(forKey: "PHONECODE") as? String
+        {
+            self.countryCode.setTitle(PHONECODE, for: .normal)
+          let phoen = DEFAULT.value(forKey: "PHONENUMBER") as? String ?? ""
+            self.PhoneTf.text = phoen
+            
+            DEFAULT.removeObject(forKey: "PHONECODE")
+            DEFAULT.removeObject(forKey: "PHONENUMBER")
+            DEFAULT.synchronize()
+        }
+      
         
     }
+    
+    @objc func textFieldDidChange(_ textField: UITextField)
+    {
+        self.phoneChanges=true
+        
+    }
+    
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         
         if textField == userNameTF
@@ -141,6 +156,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     }
     @IBAction func SubmitAct(_ sender: UIButton)
     {
+        
+        //print("phoneChanges = \(phoneChanges)")
         self.Validations()
     }
     @IBAction func ChangePhoto(_ sender: UIButton)
@@ -655,30 +672,27 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         self.navigationController?.popViewController(animated: true)
     }
     
-    func prepareMobileNumber_VC(_ loginViewController: AKFViewController)
-    {
-        loginViewController.delegate = self
-       // loginViewController.setAdvancedUIManager(nil)
-
-    }
+    @IBAction func changePhoneAct(_ sender: UIButton)
+       {
+        let sign = storyboard?.instantiateViewController(withIdentifier: "OTPVerificationVc") as! OTPVerificationVc
+                  
+           self.navigationController?.pushViewController(sign, animated: true)
+       }
+    
     @IBAction func poneNumberAct(_ sender: UIButton)
     {
-//        let inputstate = UUID().uuidString
-//        let viewController = self.accountkit.viewControllerForPhoneLogin(with: nil, state: inputstate) as AKFViewController
-//        viewController.isSendToFacebookEnabled = true
-//        self.prepareMobileNumber_VC(viewController)
-//        self.present(viewController as! UIViewController, animated: true, completion: nil)
-//
+      
+
         
         let nav = self.navigationController?.navigationBar
         nav?.barStyle = UIBarStyle.black
         nav?.tintColor = UIColor.red
-        
+
         let navController = UINavigationController(rootViewController: countryList)
         _ = [NSAttributedString.Key.foregroundColor:UIColor.red]
         navController.navigationController?.navigationBar.tintColor=UIColor.black
-        
-        
+
+
         self.present(navController, animated: true, completion: nil)
     }
     

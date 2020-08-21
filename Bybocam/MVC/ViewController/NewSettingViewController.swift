@@ -61,6 +61,18 @@ class NewSettingViewController: UIViewController, UITableViewDataSource, UITable
         settingTable.register(UINib(nibName: "SettingHeaderCell", bundle: nil), forCellReuseIdentifier: "SettingHeaderCell")
         settingTable.register(UINib(nibName: "SettingRowTableViewCell", bundle: nil), forCellReuseIdentifier: "SettingRowTableViewCell")
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        if !NetworkEngine.networkEngineObj.isInternetAvailable()
+        {
+            
+            NetworkEngine.showInterNetAlert(vc: self)
+        }
+        else
+        {
+             self.ViewProfileApi()
+        }
+    }
     @IBAction func GoBack(_ sender: UIBarButtonItem)
     {
         self.navigationController?.popViewController(animated: true)

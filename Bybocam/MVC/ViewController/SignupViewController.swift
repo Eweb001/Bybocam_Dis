@@ -84,6 +84,9 @@ class SignupViewController: UIViewController, CLLocationManagerDelegate {
     {
         super.viewDidLoad()
         setUI()
+        
+        self.signupBtn.applyGradient(colours: [COLOR1, COLOR2, COLOR3], locations: [0.0, 0.5, 1.0])
+
         self.mainNameLbl.UILableTextShadow(color: UIColor.black )
         
         self.navigationController?.isNavigationBarHidden = true

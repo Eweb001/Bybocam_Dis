@@ -78,6 +78,7 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate
     {
         super.viewDidLoad()
      
+        self.loginBtn.applyGradient(colours: [COLOR1, COLOR2, COLOR3], locations: [0.0, 0.5, 1.0])
         self.mainNameLbl.UILableTextShadow(color: UIColor.black )
         userNameTxt.placeholderColor(UIColor.black)
         passwordTxt.placeholderColor(UIColor.black)
